@@ -41,8 +41,3 @@ def get_mode(id, database):
 def update_mode(id, mode, database):
     database.update_entries('users_info', id, {'mode': mode}, update_type='rewrite')
     return True
-
-
-def hello(id, database):
-    from random import choice
-    return choice(aliceAnswers["helloTextVariations"]["gender"]).format("Имя")

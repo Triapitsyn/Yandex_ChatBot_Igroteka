@@ -1,6 +1,6 @@
-def start(response, id):
+def start(response, id, database):
     import little_fuctions
-    mode = little_fuctions.get_mode(id)
+    mode = little_fuctions.get_mode(id, database)
     if not mode.startswith('yesno'):
         return_start()
         mode = 'yesno>main'
@@ -26,8 +26,9 @@ def start(response, id):
             return_riddle(number + skip)
             mode = 'yesno>riddle>{}'.format(number + skip)
     else:
-        little_fuctions.idk()
-    little_fuctions.update_mode(id, mode)
+        import alice_interaction
+        alice_interaction.idk(id, database)
+    little_fuctions.update_mode(id, mode, database)
     pass
 
 
