@@ -1,7 +1,10 @@
 def get_response():
     pass
 
-def return_answer(buttons, text, speech):
+def return_answer(buttons, text, speech, idk = False):
+    if idk:
+        #НЕ ОБНОВЛЯТЬ ПОСЛЕДНИЕ ОТВЕТЫ
+        pass
     pass
 
 def idk(id, database):
@@ -12,4 +15,5 @@ def idk(id, database):
     buttons = last_buttons
     return_answer(buttons=buttons,
                   text=text,
-                  speech=speech)
+                  speech=speech,
+                  idk = True)
