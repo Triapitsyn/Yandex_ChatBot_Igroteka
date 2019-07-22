@@ -34,9 +34,9 @@ def start(input, id, database):
 
 
 def return_start():
-    text = 'Для вашего удобства загадки будут представлены по возрастанию сложности. ' \
+    text = 'Для вашего удобства загадки будут представлены по возрастанию сложности.\n' \
            'Вы можете использовать команду "пропустить" с любым числом, чтобы перейти к более сложным ситуациям.'
-    speech = 'Для вашего удобства загадки будут представлены по возрастанию сложности.'
+    speech = text
     buttons = ['Начать', 'Правила', 'В начало']
     return text, speech, buttons
 
@@ -62,5 +62,5 @@ def return_riddle(number):
                                 yes_no_puzzle_biblio.riddles[number - 1],
                                 yes_no_puzzle_biblio.answers[number - 1])
     speech=yes_no_puzzle_biblio.riddles[number - 1]
-    buttons=['Дальше', 'Назад', 'Пропустить 10' 'В начало']
+    buttons=['Дальше', 'Назад', 'Пропустить 10', 'В начало']
     return text, speech, buttons

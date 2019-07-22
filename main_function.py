@@ -2,7 +2,8 @@
 from __future__ import unicode_literals
 import little_fuctions
 
-def message_return(response, user_storage, text, speech, buttons, user_id, database):
+def message_return(response, user_storage, text, speech, buttons, user_id, database, mode):
+    little_fuctions.update_mode(user_id, mode, database)
     response.set_text(text)
     response.set_tts(speech)
     user_storage["suggests"] = buttons
@@ -15,7 +16,7 @@ def message_return(response, user_storage, text, speech, buttons, user_id, datab
 
 def idk_return(response, user_storage, user_id, database):
     last_text, last_speech, last_buttons = little_fuctions.get_lasts(user_id, database)
-    text = 'Я вас не поняла, давайте попробуем еще раз.\n{}'.format(last_text)
+    text = 'Я вас не поняла, давайте попробуем еще раз.\n\n{}'.format(last_text)
     speech = 'Я вас не поняла, давайте попробуем еще раз.'.format(last_speech)
     buttons = last_buttons
     response.set_text(text)
@@ -42,17 +43,22 @@ def handle_dialog(request, response, user_storage, database):
     else:
         mode = little_fuctions.get_mode(user_id, database)
 
-    if mode.startswith('yesno') or (mode == '' and little_fuctions.isequal(input, 'Данетки')):
+    if little_fuctions.isequal(input, 'В начало'):
+        mode = ''
+        input = ''
+
+    if mode.startswith('yesno') or (mode == 'start' and little_fuctions.isequal(input, 'Данетки')):
         import yes_no_puzzle
         succes = yes_no_puzzle.start(response, user_id, database)
         if succes:
-            return message_return(response, user_storage, *succes, user_id, database)
+            return message_return(response, user_storage, *succes, user_id, database, mode)
         else:
             return idk_return(response, user_storage, user_id, database)
     elif mode == '' and input == '':
         text = 'Привет, выбери игру'
         speech = text
         buttons = ['Данетки']
-        return message_return(response, user_storage, text, speech, buttons, user_id, database)
+        mode = 'start'
+        return message_return(response, user_storage, text, speech, buttons, user_id, database, mode)
     else:
         return idk_return(response, user_storage, user_id, database)
