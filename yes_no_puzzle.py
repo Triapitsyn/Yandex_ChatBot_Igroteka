@@ -51,9 +51,9 @@ def return_riddle(number):
     warning = False
     if number > len(yes_no_puzzle_biblio.riddles):
         number = len(yes_no_puzzle_biblio.riddles)
-        warning = 'Сегодня у нас только {} загадок, показываю последнюю.\n'
+        warning = 'Сегодня у нас только {} загадок, показываю последнюю.\n'.format(number)
 
-    text='{}{}\nОтвет: {}'.format(str(number)+') ' if not warning else warning,
+    text='{}{}\n\nОтвет: {}'.format(str(number)+') ' if not warning else warning,
                                 yes_no_puzzle_biblio.riddles[number - 1],
                                 yes_no_puzzle_biblio.answers[number - 1])
     speech=yes_no_puzzle_biblio.riddles[number - 1]
