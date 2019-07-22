@@ -7,8 +7,9 @@ import little_fuctions
 aliceAnswers = read_answers_data("data/answers_dict_example")
 
 def message_return(response, user_storage, text, speech, buttons):
-    response.set_text(message)
-    response.set_tts(message)
+    response.set_text(text)
+    response.set_tts(speech)
+    user_storage["suggests"] = buttons
     buttons, user_storage = little_fuctions.get_suggests(user_storage)
     response.set_buttons(buttons)
     return response, user_storage
