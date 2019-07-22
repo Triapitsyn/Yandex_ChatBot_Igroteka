@@ -5,9 +5,7 @@ def get_suggests(user_storage):
             if type(suggest) != list:
                 suggests.append({'title': suggest, 'hide': True})
             else:
-                print(suggest)
                 suggests.append({'title': suggest[0], "url": suggest[1], 'hide': False})
-                print(suggests)
     else:
         suggests = []
 
@@ -34,12 +32,12 @@ def read_answers_data(name):
 aliceAnswers = read_answers_data("data/answers_dict_example")
 
 
-def get_mode(id, database):
-    return database.get_entry("users_info", ['mode'], {'request_id': id})[0][0]
+def get_mode(user_id, database):
+    return database.get_entry("users_info", ['mode'], {'request_id': user_id})[0][0]
 
 
-def update_mode(id, mode, database):
-    database.update_entries('users_info', id, {'mode': mode}, update_type='rewrite')
+def update_mode(user_id, mode, database):
+    database.update_entries('users_info', user_id, {'mode': mode}, update_type='rewrite')
     return True
 
 
@@ -48,7 +46,7 @@ def isequal(text, pattern):
     return text.capitalize() in synonyms.synonyms[pattern]
 
 
-def get_lasts(id, database):
-    return database.get_entry("users_info", ['last_text'], {'request_id': id})[0][0],\
-            database.get_entry("users_info", ['last_speech'], {'request_id': id})[0][0],\
-            database.get_entry("users_info", ['last_buttons'], {'request_id': id})[0][0]
+def get_lasts(user_id, database):
+    return database.get_entry("users_info", ['last_text'], {'request_id': user_id})[0][0],\
+            database.get_entry("users_info", ['last_speech'], {'request_id': user_id})[0][0],\
+            database.get_entry("users_info", ['last_buttons'], {'request_id': user_id})[0][0]
