@@ -1,10 +1,6 @@
 # coding: utf-8
 from __future__ import unicode_literals
-import json
 import little_fuctions
-
-
-aliceAnswers = read_answers_data("data/answers_dict_example")
 
 def message_return(response, user_storage, text, speech, buttons, user_id, database):
     response.set_text(text)
