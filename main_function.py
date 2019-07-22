@@ -22,14 +22,15 @@ def handle_dialog(request, response, user_storage, database):
         user_storage = {"suggests": []}
 
     input = request.command
+    id = request.user_id
     isfirsttime = request.is_new_session
     if isfirsttime:
         mode = ''
+        little_fuctions.update_mode(id, mode, database)
     else:
-        mode = database.get_entry("users_info", ['mode'], {'request_id': request.user_id})[0][0]
+        mode = database.get_entry("users_info", ['mode'], {'request_id': id})[0][0]
     last_text, last_speech, last_buttons = little_fuctions.get_lasts(id, database)
 
-    import alice_interaction
     mode = little_fuctions.get_mode(id, database)
     if mode.startswith('yesno') or (mode == '' and little_fuctions.isequal(response, 'Данетки')):
         import yes_no_puzzle
