@@ -7,7 +7,7 @@ def start(input, id, database):
     elif mode == 'yesno>main' and little_fuctions.isequal(input, 'Правила'):
         text, speech, buttons = return_rules()
         mode = 'yesno>rules'
-    elif mode == 'yesno>rules' and little_fuctions.isequal(input, 'Начать'):
+    elif (mode == 'yesno>rules' or mode == 'yesno>main') and little_fuctions.isequal(input, 'Начать'):
         text, speech, buttons = return_riddle(1)
         mode = 'yesno>riddle>1'
     elif mode.startswith('yesno>riddle>'):
