@@ -25,6 +25,7 @@ def handle_dialog(request, response, user_storage, database):
     isfirsttime = request.is_new_session
     if isfirsttime:
         mode = ''
+        update_mode(request.user_id, mode, database)
     else:
         mode = database.get_entry("users_info", ['mode'], {'request_id': request.user_id})[0][0]
     last_text, last_speech, last_buttons = little_fuctions.get_lasts(id, database)
