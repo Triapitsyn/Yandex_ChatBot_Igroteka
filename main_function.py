@@ -31,4 +31,3 @@ def start(id, database):
         yes_no_puzzle.start(response, id, database)
     else:
         alice_interaction.idk(id, database)
-        pass
