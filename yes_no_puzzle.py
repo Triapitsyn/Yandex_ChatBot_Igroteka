@@ -46,7 +46,6 @@ def return_rules():
     return text, speech, buttons
 
 def return_riddle(number):
-    import alice_interaction
     import yes_no_puzzle_biblio
 
     warning = False
