@@ -37,3 +37,4 @@ def handle_dialog(request, response, user_storage, database):
         yes_no_puzzle.start(response, id, database)
     else:
         alice_interaction.idk(id, database)
+        pass
