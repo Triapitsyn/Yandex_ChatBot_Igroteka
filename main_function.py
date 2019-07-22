@@ -13,7 +13,7 @@ def message_return(response, user_storage, text, speech, buttons, user_id, datab
     database.update_entries('users_info', user_id, {'last_buttons': '#'.join(buttons)}, update_type='rewrite')
     return response, user_storage
 
-def user_idk_return(response, user_storage, user_id, database):
+def idk_return(response, user_storage, user_id, database):
     last_text, last_speech, last_buttons = little_fuctions.get_lasts(user_id, database)
     text = 'Я вас не поняла, давайте попробуем еще раз.\n{}'.format(last_text)
     speech = 'Я вас не поняла, давайте попробуем еще раз.'.format(last_speech)
@@ -28,8 +28,8 @@ def user_idk_return(response, user_storage, user_id, database):
 
 def handle_dialog(request, response, user_storage, database):
 
-    if not database.get_entry("users_info", ['new'], {'request_user_id': request.user_id}):
-        database.add_entries("users_info", {"request_user_id": request.user_id})
+    if not database.get_entry("users_info", ['new'], {'request_id': request.user_id}):
+        database.add_entries("users_info", {"request_id": request.user_id})
     if not user_storage:
         user_storage = {"suggests": []}
 
@@ -48,11 +48,11 @@ def handle_dialog(request, response, user_storage, database):
         if succes:
             return message_return(response, user_storage, *succes, user_id, database)
         else:
-            return user_idk_return(response, user_storage, user_id, database)
+            return idk_return(response, user_storage, user_id, database)
     elif mode == '' and input == '':
         text = 'Привет, выбери игру'
         speech = text
         buttons = ['Данетки']
         return message_return(response, user_storage, text, speech, buttons, user_id, database)
     else:
-        return user_idk_return(response, user_storage, user_id, database)
+        return idk_return(response, user_storage, user_id, database)
