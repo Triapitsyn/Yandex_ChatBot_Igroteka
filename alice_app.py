@@ -18,8 +18,6 @@ import postgresql_database
 from flask import Flask, request
 app = Flask(__name__)
 
-import pymorphy2
-
 
 # Хранилище данных о сессиях.
 session_storage = {}
@@ -46,6 +44,7 @@ def init_database(host, user, password, dbname):
                        "last_text": "str DEFAULT ''", "last_speech": "str DEFAULT ''",
                        "last_buttons": "str DEFAULT ''"
                        })
+    # psdb.drop_table("users_info")
     return psdb
 
 
@@ -57,10 +56,7 @@ def mainn():
 # Задаем параметры приложения Flask.
 @app.route("/alice_hackaton/", methods=['POST'])
 def main():
-    # database = init_database(host='localhost', user='postgres3', password='1488',
-    #                          dbname='programmer_simulator')
-    database = ""
-    # Функция получает тело запроса и возвращает ответ.
+    database = init_database(host='localhost', user='postgres', password='1488', dbname='new_game')
     alice_request = AliceRequest(request.json)
     logging.info('Request: {}'.format(alice_request))
     alice_response = AliceResponse(alice_request)
