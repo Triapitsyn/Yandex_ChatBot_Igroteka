@@ -17,14 +17,7 @@ def message_return(response, user_storage, message, button, database, request, m
 
 
 def handle_dialog(request, response, user_storage, database, morph):
-    if not user_storage:
-        user_storage = {"suggests": ["abc"]}
-    return message_return(response, user_storage, "Привет-привет", [], database, request, "")
-
-
-def start(id, database):
     import alice_interaction
-    response = alice_interaction.get_response()
     mode = little_fuctions.get_mode(id, database)
     if mode.startswith('yesno') or (mode == '' and little_fuctions.isequal(response, 'Данетки')):
         import yes_no_puzzle
