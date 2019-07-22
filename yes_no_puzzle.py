@@ -19,7 +19,7 @@ def start(response, id, database):
             return_riddle(number + 1)
             mode = 'yesno>riddle>{}'.format(number + 1)
         elif little_fuctions.isequal(reponse.split()[0], 'Пропустить'):
-            if len(response.split()) == 2 and response.split[1].isdigit():
+            if response.split[1].isdigit():
                 skip = int(response.split[1])
             else:
                 skip = 1
@@ -49,6 +49,9 @@ def return_rules():
 def return_riddle(number):
     import alice_interaction
     import yes_no_puzzle_biblio
+    if number > len(yes_no_puzzle_biblio.riddles):
+        number = len(yes_no_puzzle_biblio.riddles)
+        warning = 'Сегодня у нас только {} '
     alice_interaction.return_answer(buttons=['Дальше', 'Назад', 'В начало'],
                                     text='{}) {}\nОтвет: {}'.format(number,
                                                                     yes_no_puzzle_biblio.riddles[number],
