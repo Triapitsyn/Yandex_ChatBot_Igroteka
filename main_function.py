@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 import little_fuctions
 
-def message_return(response, user_storage, text, speech, buttons, user_id, database, mode):
+def message_return(response, user_storage, text, speech, buttons, mode, user_id, database):
     little_fuctions.update_mode(user_id, mode, database)
     response.set_text(text)
     response.set_tts(speech)
@@ -51,7 +51,7 @@ def handle_dialog(request, response, user_storage, database):
         import yes_no_puzzle
         succes = yes_no_puzzle.start(response, user_id, database)
         if succes:
-            return message_return(response, user_storage, *succes, user_id, database, mode)
+            return message_return(response, user_storage, *succes, user_id, database)
         else:
             return idk_return(response, user_storage, user_id, database)
     elif mode == '' and input == '':
@@ -59,6 +59,6 @@ def handle_dialog(request, response, user_storage, database):
         speech = text
         buttons = ['Данетки']
         mode = 'start'
-        return message_return(response, user_storage, text, speech, buttons, user_id, database, mode)
+        return message_return(response, user_storage, text, speech, buttons, mode, user_id, database)
     else:
         return idk_return(response, user_storage, user_id, database)

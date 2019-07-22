@@ -29,8 +29,7 @@ def start(input, id, database):
             return False
     else:
         return False
-    little_fuctions.update_mode(id, mode, database)
-    return text, speech, buttons
+    return text, speech, buttons, mode
 
 
 def return_start():
