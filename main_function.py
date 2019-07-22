@@ -46,14 +46,13 @@ def handle_dialog(request, response, user_storage, database):
         import yes_no_puzzle
         succes = yes_no_puzzle.start(response, user_id, database)
         if succes:
-            message_return(response, user_storage, *succes, user_id, database)
+            return message_return(response, user_storage, *succes, user_id, database)
         else:
-            user_idk_return(response, user_storage, user_id, database)
+            return user_idk_return(response, user_storage, user_id, database)
     elif mode == '' and input == '':
         text = 'Привет, выбери игру'
         speech = text
         buttons = 'Данетки'
-        message_return(response, user_storage, text, speech, buttons, user_id, database)
+        return message_return(response, user_storage, text, speech, buttons, user_id, database)
     else:
-        user_idk_return(response, user_storage, user_id, database)
-        pass
+        return user_idk_return(response, user_storage, user_id, database)
