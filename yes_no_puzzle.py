@@ -19,8 +19,8 @@ def start(input, id, database):
             text, speech, buttons = return_riddle(number + 1)
             mode = 'yesno>riddle>{}'.format(number + 1)
         elif little_fuctions.isequal(input.split()[0], 'Пропустить'):
-            if input.split[1].isdigit():
-                skip = int(input.split[1])
+            if input.split()[1].isdigit():
+                skip = int(input.split()[1])
             else:
                 skip = 1
             text, speech, buttons = return_riddle(number + skip)
