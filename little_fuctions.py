@@ -42,6 +42,13 @@ def update_mode(id, mode, database):
     database.update_entries('users_info', id, {'mode': mode}, update_type='rewrite')
     return True
 
+
 def isequal(text, pattern):
     import synonyms
     return text.capitalize() in synonyms.synonyms[pattern]
+
+
+def get_lasts(id, database):
+    return database.get_entry("users_info", ['last_text'], {'request_id': id})[0][0],\
+            database.get_entry("users_info", ['last_speech'], {'request_id': id})[0][0],\
+            database.get_entry("users_info", ['last_buttons'], {'request_id': id})[0][0]
