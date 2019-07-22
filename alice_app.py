@@ -42,11 +42,8 @@ def init_database(host, user, password, dbname):
     psdb = postgresql_database.DatabaseManager(host, user, password, dbname)
     psdb.create_table("users_info",
                       {'user_id': "serial primary", "request_id": "str NOT NULL UNIQUE",
-                       "mode": "str DEFAULT 'null'", "Name": "str DEFAULT 'null'", "Named": "bool DEFAULT False",
-                       "eng_words": "str DEFAULT ''", "rus_words": "str DEFAULT ''",
-                       "learned_eng_words": "str DEFAULT ''", "learned_rus_words": "str DEFAULT ''",
-                       "training_score": "str DEFAULT ''", "q_count": "int DEFAULT 0", "q_true": "int DEFAULT 0",
-                       "q": "str DEFAULT ''", "word_sets": "str DEFAULT ''"
+                       "mode": "str DEFAULT ''", "new": "str DEFAULT 'notnull'",
+                       "last": "str DEFAULT ''"
                        })
     return psdb
 
@@ -65,7 +62,6 @@ def main():
     # Функция получает тело запроса и возвращает ответ.
     alice_request = AliceRequest(request.json)
     logging.info('Request: {}'.format(alice_request))
-    morph = pymorphy2.MorphAnalyzer()
     alice_response = AliceResponse(alice_request)
 
     user_id = alice_request.user_id
@@ -73,7 +69,7 @@ def main():
     print(session_storage.get(user_id))
     print(len(session_storage))
     alice_response, session_storage[user_id] = handle_dialog(
-        alice_request, alice_response, session_storage.get(user_id), database, morph
+        alice_request, alice_response, session_storage.get(user_id), database
     )
 
     logging.info('Response: {}'.format(alice_response))

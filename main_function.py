@@ -6,17 +6,34 @@ import little_fuctions
 
 aliceAnswers = read_answers_data("data/answers_dict_example")
 
-def message_return(response, user_storage, message, button, database, request, mode):
+def message_return(response, user_storage, message):
     # ща будет магия
     response.set_text(message)
     response.set_tts(message)
     buttons, user_storage = little_fuctions.get_suggests(user_storage)
     print(buttons)
-    response.set_buttons(button)
+    response.set_buttons(buttons)
     return response, user_storage
 
 
-def handle_dialog(request, response, user_storage, database, morph):
+def handle_dialog(request, response, user_storage, database):
+
+    if not database.get_entry("users_info", ['new'], {'request_id': request.user_id}):
+        database.add_entries("users_info", {"request_id": request.user_id})
+    if not user_storage:
+        user_storage = {"suggests": []}
+
+    # Сообщение пользователя
+    input_message = request.command
+    # Флаг на первый запуск
+    first_time = request.is_new_session
+    # Текущее состояние
+    mode = database.get_entry("users_info", ['mode'], {'request_id': request.user_id})[0][0]
+    # Последнее сообщение
+    last_message = database.get_entry("users_info", ['last'], {'request_id': request.user_id})[0][0]
+    # Последние кнопки
+    last_buttons = user_storage["suggests"]
+
     import alice_interaction
     mode = little_fuctions.get_mode(id, database)
     if mode.startswith('yesno') or (mode == '' and little_fuctions.isequal(response, 'Данетки')):
