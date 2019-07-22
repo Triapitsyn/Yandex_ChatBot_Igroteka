@@ -10,7 +10,7 @@ def message_return(response, user_storage, text, speech, buttons, user_id, datab
     response.set_buttons(buttons)
     database.update_entries('users_info', user_id, {'last_text': text}, update_type='rewrite')
     database.update_entries('users_info', user_id, {'last_speech': speech}, update_type='rewrite')
-    database.update_entries('users_info', user_id, {'last_buttons': buttons}, update_type='rewrite')
+    database.update_entries('users_info', user_id, {'last_buttons': '#'.join(buttons)}, update_type='rewrite')
     return response, user_storage
 
 def user_idk_return(response, user_storage, user_id, database):

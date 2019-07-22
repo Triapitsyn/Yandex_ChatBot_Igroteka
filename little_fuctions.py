@@ -49,4 +49,4 @@ def isequal(text, pattern):
 def get_lasts(user_id, database):
     return database.get_entry("users_info", ['last_text'], {'request_id': user_id})[0][0],\
             database.get_entry("users_info", ['last_speech'], {'request_id': user_id})[0][0],\
-            database.get_entry("users_info", ['last_buttons'], {'request_id': user_id})[0][0]
+            database.get_entry("users_info", ['last_buttons'], {'request_id': user_id})[0][0].split('#')
