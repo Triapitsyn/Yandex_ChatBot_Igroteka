@@ -52,7 +52,7 @@ def handle_dialog(request, response, user_storage, database):
     elif mode == '' and input == '':
         text = 'Привет, выбери игру'
         speech = text
-        buttons = 'Данетки'
+        buttons = ['Данетки']
         return message_return(response, user_storage, text, speech, buttons, user_id, database)
     else:
         return user_idk_return(response, user_storage, user_id, database)
