@@ -44,4 +44,4 @@ def update_mode(id, mode, database):
 
 def isequal(text, pattern):
     import synonyms
-    return text in synonyms.synonyms[pattern]
+    return text.capitalize() in synonyms.synonyms[pattern]
