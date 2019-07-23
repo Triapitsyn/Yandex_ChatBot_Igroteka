@@ -20,7 +20,7 @@ def start(input, id, database):
     elif mode == '{}>another_rules'.format(game) and little_fuctions.isequal(input, 'Другой вариант игры'):
         text, speech, buttons = return_rules()
         mode = '{}>rules'.format(game)
-    elif mode == '{}>another_rules'.format(game) and little_fuctions.isequal(input, 'Другой вариант игры'):
+    elif mode == '{}>another_rules'.format(game) and little_fuctions.isequal(input, 'Варианты действий'):
         import I_have_never_ever_biblio
         text = 'Я никогда не...\n' + '\n\t'.join(I_have_never_ever_biblio.questions)
         speech = 'Приятной игры!'
