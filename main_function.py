@@ -47,7 +47,7 @@ def handle_dialog(request, response, user_storage, database):
         mode = ''
         input = ''
 
-    games = ['Данетки']
+    games = ['Данетки', 'Я никогда не']
 
     if little_fuctions.isequal(input, 'Помощь'):
         text = 'В этом навыке все просто! Выбери игру и скажи "начать". ' \
@@ -59,7 +59,14 @@ def handle_dialog(request, response, user_storage, database):
 
     elif mode.startswith('yesno') or (mode == 'start' and little_fuctions.isequal(input, 'Данетки')):
         import yes_no_puzzle
-        succes = yes_no_puzzle.start(response, user_id, database)
+        succes = yes_no_puzzle.start(input, user_id, database)
+        if succes:
+            return message_return(response, user_storage, *succes, user_id, database)
+        else:
+            return idk_return(response, user_storage, user_id, database)
+    elif mode.startswith('Inever') or (mode == 'start' and little_fuctions.isequal(input, 'Я никогда не')):
+        import I_have_never_ever
+        succes = I_have_never_ever.start(input, user_id, database)
         if succes:
             return message_return(response, user_storage, *succes, user_id, database)
         else:
