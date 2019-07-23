@@ -43,10 +43,16 @@ def update_mode(user_id, mode, database):
 
 def isequal(text, pattern):
     import synonyms
-    return text.capitalize() in synonyms.synonyms[pattern]
+    return text.capitalize().strip('.,?!') in synonyms.synonyms[pattern]
 
 
 def get_lasts(user_id, database):
     return database.get_entry("users_info", ['last_text'], {'request_id': user_id})[0][0],\
             database.get_entry("users_info", ['last_speech'], {'request_id': user_id})[0][0],\
             database.get_entry("users_info", ['last_buttons'], {'request_id': user_id})[0][0].split('#')
+
+def hello():
+    import random
+    return random.choice(['Привет. Выбери игру.',
+                          'Привет. Во что играем сегодня?',
+                          'Привет. Я джала тебя. С чего начнем?'])
