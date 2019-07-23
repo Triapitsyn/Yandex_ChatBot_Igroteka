@@ -31,17 +31,17 @@ def start(input, id, database):
         fl = int(mode.split('>')[3])
         if little_fuctions.isequal(input, 'Назад'):
             text, speech, buttons = return_riddle(number - 1, fl)
-            mode = '{}>riddle>{}'.format(game, number - 1)
+            mode = '{}>riddle>{}>{}'.format(game, number - 1, fl)
         elif little_fuctions.isequal(input, 'Дальше'):
             text, speech, buttons = return_riddle(number + 1, fl)
-            mode = '{}>riddle>{}'.format(game, number + 1)
+            mode = '{}>riddle>{}>{}'.format(game, number + 1, fl)
         elif little_fuctions.isequal(input.split()[0], 'Пропустить'):
             if input.split()[1].isdigit():
                 skip = int(input.split()[1])
             else:
                 skip = 1
             text, speech, buttons = return_riddle(number + skip, fl)
-            mode = '{}>riddle>{}'.format(game, number + skip)
+            mode = '{}>riddle>{}>{}'.format(game, number + skip, fl)
         else:
             return False
     else:
