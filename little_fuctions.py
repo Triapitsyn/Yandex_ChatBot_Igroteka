@@ -43,7 +43,7 @@ def update_mode(user_id, mode, database):
 
 def isequal(text, pattern):
     import synonyms
-    return text.capitalize().strip('.,?!') in synonyms.synonyms[pattern]
+    return text.capitalize().strip('.,?!').replace('ё', 'е') in synonyms.synonyms[pattern]
 
 
 def get_lasts(user_id, database):
