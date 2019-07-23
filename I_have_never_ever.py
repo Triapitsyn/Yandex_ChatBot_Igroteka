@@ -88,10 +88,10 @@ def return_riddle(number, fl):
         warning = 'Сегодня у нас только {} вопросов, показываю последний.\n\n'.format(number)
 
     text='{}{}{}'.format(str(number)+') ' if not warning else warning,
-                         I_have_never_ever_biblio.questions[number - 1],
-                         '\n\nМой ответ - {}'.format(random.choice(['да', 'нет'])*fl))
+                         'Я никогда не ' + I_have_never_ever_biblio.questions[number - 1],
+                         '\n\nМой ответ - {}'.format(random.choice(['да', 'нет']))*fl)
     speech='{}{}{}'.format(warning,
                            'Я никогда не ' + I_have_never_ever_biblio.questions[number - 1],
-                           '\n\nМой ответ - {}'.format(random.choice(['да', 'нет'])*fl))
+                           '\n\nМой ответ - {}'.format(random.choice(['да', 'нет']))*fl)
     buttons=['Дальше', 'Назад', 'Пропустить 10', 'В начало']
     return text, speech, buttons
