@@ -1,30 +1,31 @@
 def start(input, id, database):
     import little_fuctions
     mode = little_fuctions.get_mode(id, database)
-    if not mode.startswith('yesno'):
+    game = 'yesno'
+    if not mode.startswith(game):
         text, speech, buttons = return_start()
-        mode = 'yesno>main'
-    elif mode == 'yesno>main' and little_fuctions.isequal(input, 'Правила'):
+        mode = '{}>main'.format(game)
+    elif mode == '{}>main'.format(game) and little_fuctions.isequal(input, 'Правила'):
         text, speech, buttons = return_rules()
-        mode = 'yesno>rules'
-    elif (mode == 'yesno>rules' or mode == 'yesno>main') and little_fuctions.isequal(input, 'Начать'):
+        mode = '{}>rules'.format(game)
+    elif (mode == '{}>rules'.format(game) or mode == '{}>main'.format(game)) and little_fuctions.isequal(input, 'Начать'):
         text, speech, buttons = return_riddle(1)
-        mode = 'yesno>riddle>1'
-    elif mode.startswith('yesno>riddle>'):
+        mode = '{}>riddle>1'.format(game)
+    elif mode.startswith('{}>riddle>'.format(game)):
         number = int(mode.split('>')[2])
         if little_fuctions.isequal(input, 'Назад'):
             text, speech, buttons = return_riddle(number - 1)
-            mode = 'yesno>riddle>{}'.format(number - 1)
+            mode = '{}>riddle>{}'.format(game, number - 1)
         elif little_fuctions.isequal(input, 'Дальше'):
             text, speech, buttons = return_riddle(number + 1)
-            mode = 'yesno>riddle>{}'.format(number + 1)
+            mode = '{}>riddle>{}'.format(game, number + 1)
         elif little_fuctions.isequal(input.split()[0], 'Пропустить'):
             if input.split()[1].isdigit():
                 skip = int(input.split()[1])
             else:
                 skip = 1
             text, speech, buttons = return_riddle(number + skip)
-            mode = 'yesno>riddle>{}'.format(number + skip)
+            mode = '{}>riddle>{}'.format(game, number + skip)
         else:
             return False
     else:
@@ -34,7 +35,8 @@ def start(input, id, database):
 
 def return_start():
     text = 'Для вашего удобства загадки будут представлены по возрастанию сложности.\n\n' \
-           'Вы можете использовать команду "пропустить" с любым числом, чтобы перейти к более сложным ситуациям.'
+           'Вы можете использовать команду "пропустить" с любым числом, чтобы перейти к более сложным ситуациям.\n\n' \
+           'Приятной игры!'
     speech = text
     buttons = ['Начать', 'Правила', 'В начало']
     return text, speech, buttons
@@ -42,9 +44,7 @@ def return_start():
 def return_rules():
     text='Ведущий описывает странную ситуацию, а угадывающие должны выяснить её, ' \
          'задавая ведущему вопросы, на которые можно ответить только «да», «нет», «не имеет значения» или «не корректно»'
-    speech='Ведущий описывает странную ситуацию, а угадывающие должны, задавая уточняющие вопросы, выяснить её. ' \
-           'При угадывании можно задавать вопросы, но ответом на них могут быть только слова ' \
-           '«да», «нет», «не имеет значения» или «не корректно».'
+    speech=text
     buttons=['Начать', 'В начало']
     return text, speech, buttons
 
