@@ -89,9 +89,9 @@ def return_riddle(number, fl):
 
     text='{}{}{}'.format(str(number)+') ' if not warning else warning,
                          'Я никогда не ' + I_have_never_ever_biblio.questions[number - 1],
-                         '\n\nМой ответ - {}'.format(random.choice(['да', 'нет']))*fl)
+                         '\n\nМой ответ - {}'.format(random.choice(['Я делал это', 'Я не делал это']))*fl)
     speech='{}{}{}'.format(warning,
                            'Я никогда не ' + I_have_never_ever_biblio.questions[number - 1],
-                           '\n\nМой ответ - {}'.format(random.choice(['да', 'нет']))*fl)
+                           '\n\nМой ответ - {}'.format(random.choice(['Я делал это', 'Я не делал это']))*fl)
     buttons=['Дальше', 'Назад', 'Пропустить 10', 'В начало']
     return text, speech, buttons
