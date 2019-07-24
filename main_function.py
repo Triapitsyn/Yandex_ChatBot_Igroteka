@@ -71,6 +71,13 @@ def handle_dialog(request, response, user_storage, database):
             return message_return(response, user_storage, *succes, user_id, database)
         else:
             return idk_return(response, user_storage, user_id, database)
+    elif mode.startswith('croco') or (mode == 'start' and little_fuctions.isequal(input, 'Крокодил')):
+        import croco
+        succes = croco.start(input, user_id, database)
+        if succes:
+            return message_return(response, user_storage, *succes, user_id, database)
+        else:
+            return idk_return(response, user_storage, user_id, database)
     elif mode == '' and input == '':
         text = little_fuctions.hello()
         speech = text
