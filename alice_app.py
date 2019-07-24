@@ -56,7 +56,28 @@ def mainn():
 # Задаем параметры приложения Flask.
 @app.route("/alice_hackaton/", methods=['POST'])
 def main():
-    database = init_database(host='localhost', user='postgres', password='1488', dbname='new_game')
+    database = init_database(host='localhost', user='postgr', password='1488', dbname='new_game')
+    alice_request = AliceRequest(request.json)
+    logging.info('Request: {}'.format(alice_request))
+    alice_response = AliceResponse(alice_request)
+
+    user_id = alice_request.user_id
+    print(user_id)
+    print(session_storage.get(user_id))
+    print(len(session_storage))
+    alice_response, session_storage[user_id] = handle_dialog(
+        alice_request, alice_response, session_storage.get(user_id), database
+    )
+
+    logging.info('Response: {}'.format(alice_response))
+    print()
+
+    return alice_response.dumps()
+
+
+@app.route("/word_coach/", methods=['POST'])
+def mainnn():
+    database = init_database(host='localhost', user='postgr', password='1488', dbname='word_coach')
     alice_request = AliceRequest(request.json)
     logging.info('Request: {}'.format(alice_request))
     alice_response = AliceResponse(alice_request)
