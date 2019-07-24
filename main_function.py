@@ -47,7 +47,7 @@ def handle_dialog(request, response, user_storage, database):
         mode = ''
         input = ''
 
-    games = ['Данетки', 'Я никогда не']
+    games = ['Данетки', 'Я никогда не', 'Крокодил']
 
     if little_fuctions.isequal(input, 'Помощь'):
         text = 'В этом навыке все просто! Выбери игру и скажи "начать". ' \
