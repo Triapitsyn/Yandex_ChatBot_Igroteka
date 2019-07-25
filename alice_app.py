@@ -77,7 +77,9 @@ def main():
 
 @app.route("/word_coach/", methods=['POST'])
 def mainnn():
-    database = init_database(host='localhost', user='postgr', password='1488', dbname='word_coach')
+    from other import main_function
+    from other import alice_app
+    database = alice_app.init_database(host='localhost', user='postgr', password='1488', dbname='word_coach')
     alice_request = AliceRequest(request.json)
     logging.info('Request: {}'.format(alice_request))
     alice_response = AliceResponse(alice_request)
@@ -86,8 +88,8 @@ def mainnn():
     print(user_id)
     print(session_storage.get(user_id))
     print(len(session_storage))
-    alice_response, session_storage[user_id] = handle_dialog(
-        alice_request, alice_response, session_storage.get(user_id), database
+    alice_response, session_storage[user_id] = main_function.handle_dialog(
+        alice_request, alice_response, session_storage.get(user_id), database, ""
     )
 
     logging.info('Response: {}'.format(alice_response))
