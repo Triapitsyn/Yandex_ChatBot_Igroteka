@@ -20,10 +20,18 @@ class AliceRequest(object):
     @property
     def is_new_session(self):
         return bool(self.session['new'])
+
+    @property
+    def request(self):
+        return self._request_dict['request']
     
     @property
     def command(self):
         return self._request_dict['request']['command']
+    
+    @property
+    def payload(self):
+        return self._request_dict["request"]["payload"]["name"]
 
     @property
     def interfaces(self):
@@ -53,7 +61,7 @@ class AliceResponse(object):
     def set_text(self, text):
         self._response_dict['response']['text'] = text[:1024]
 
-    def set_tts(self,text):
+    def set_tts(self, text):
         self._response_dict["response"]['tts'] = text[:1024]
 
     def set_buttons(self, buttons):

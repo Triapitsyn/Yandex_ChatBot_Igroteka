@@ -79,8 +79,10 @@ def main():
 def mainnn():
     from other import main_function
     from other import alice_app
+    import pymorphy2
     database = alice_app.init_database(host='localhost', user='postgr', password='1488', dbname='word_coach')
     alice_request = AliceRequest(request.json)
+    morph = pymorphy2.MorphAnalyzer()
     logging.info('Request: {}'.format(alice_request))
     alice_response = AliceResponse(alice_request)
 
@@ -89,7 +91,7 @@ def mainnn():
     print(session_storage.get(user_id))
     print(len(session_storage))
     alice_response, session_storage[user_id] = main_function.handle_dialog(
-        alice_request, alice_response, session_storage.get(user_id), database, ""
+        alice_request, alice_response, session_storage.get(user_id), database, morph
     )
 
     logging.info('Response: {}'.format(alice_response))
