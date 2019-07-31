@@ -12,20 +12,21 @@ def start(input, id, database):
         text, speech, buttons = return_riddle(1)
         mode = '{}>riddle>1'.format(game)
     elif mode.startswith('{}>riddle>'.format(game)):
+        import yes_no_puzzle_biblio
         number = int(mode.split('>')[2])
         if little_fuctions.isequal(input, 'Назад'):
             text, speech, buttons = return_riddle(number - 1)
             mode = '{}>riddle>{}'.format(game, number - 1)
         elif little_fuctions.isequal(input, 'Дальше'):
             text, speech, buttons = return_riddle(number + 1)
-            mode = '{}>riddle>{}'.format(game, number + 1)
+            mode = '{}>riddle>{}'.format(game, min(number + 1, len(yes_no_puzzle_biblio.riddles)))
         elif little_fuctions.isequal(input.split()[0], 'Пропустить'):
             if input.split()[1].isdigit():
                 skip = int(input.split()[1])
             else:
                 skip = 1
             text, speech, buttons = return_riddle(number + skip)
-            mode = '{}>riddle>{}'.format(game, number + skip)
+            mode = '{}>riddle>{}'.format(game, min(number + skip, len(yes_no_puzzle_biblio.riddles)))
         else:
             return False
     else:
