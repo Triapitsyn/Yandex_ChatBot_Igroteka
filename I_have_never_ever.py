@@ -27,6 +27,7 @@ def start(input, id, database):
         buttons = ['В начало']
         mode = '{}>another'.format(game)
     elif mode.startswith('{}>riddle>'.format(game)):
+        import I_have_never_ever_biblio
         number = int(mode.split('>')[2])
         fl = int(mode.split('>')[3])
         if little_fuctions.isequal(input, 'Назад'):
@@ -34,14 +35,14 @@ def start(input, id, database):
             mode = '{}>riddle>{}>{}'.format(game, number - 1, fl)
         elif little_fuctions.isequal(input, 'Дальше'):
             text, speech, buttons = return_riddle(number + 1, fl)
-            mode = '{}>riddle>{}>{}'.format(game, number + 1, fl)
+            mode = '{}>riddle>{}>{}'.format(game, min(number + 1, len(I_have_never_ever_biblio.questions)), fl)
         elif little_fuctions.isequal(input.split()[0], 'Пропустить'):
             if input.split()[1].isdigit():
                 skip = int(input.split()[1])
             else:
                 skip = 1
             text, speech, buttons = return_riddle(number + skip, fl)
-            mode = '{}>riddle>{}>{}'.format(game, number + skip, fl)
+            mode = '{}>riddle>{}>{}'.format(game, min(number + skip, len(I_have_never_ever_biblio.questions)), fl)
         else:
             return False
     else:
