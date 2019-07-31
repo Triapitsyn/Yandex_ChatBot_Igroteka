@@ -94,5 +94,9 @@ def return_riddle(number, fl):
     speech='{}{}{}'.format(warning,
                            'Я никогда не ' + I_have_never_ever_biblio.questions[number - 1],
                            '\n\nМой ответ - {}'.format(random.choice(['Я делал это', 'Я не делал это']))*fl)
-    buttons=['Дальше', 'Назад', 'Пропустить 10', 'В начало']
+
+    if number == 1:
+        buttons = ['Дальше', 'Пропустить 10', 'В начало']
+    else:
+        buttons=['Дальше', 'Назад', 'Пропустить 10', 'В начало']
     return text, speech, buttons

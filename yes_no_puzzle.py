@@ -61,5 +61,8 @@ def return_riddle(number):
                                 yes_no_puzzle_biblio.riddles[number - 1],
                                 yes_no_puzzle_biblio.answers[number - 1])
     speech=yes_no_puzzle_biblio.riddles[number - 1]
-    buttons=['Дальше', 'Назад', 'Пропустить 10', 'В начало']
+    if number == 1:
+        buttons = ['Дальше', 'Пропустить 10', 'В начало']
+    else:
+        buttons=['Дальше', 'Назад', 'Пропустить 10', 'В начало']
     return text, speech, buttons
