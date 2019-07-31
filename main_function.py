@@ -10,7 +10,7 @@ def message_return(response, user_storage, text, speech, buttons, mode, user_id,
     user_storage["suggests"] = buttons
     database.update_entries('users_info', user_id, {'last_buttons': '#'.join(buttons)}, update_type='rewrite')
     buttons, user_storage = little_fuctions.get_suggests(user_storage)
-    if mode == "start":
+    if mode == "":
         user_storage["card"] = start_card
         response.set_card(user_storage["card"])
     else:
@@ -28,7 +28,7 @@ def idk_return(response, user_storage, user_id, database, mode):
     response.set_tts(speech)
     user_storage["suggests"] = buttons
     buttons, user_storage = little_fuctions.get_suggests(user_storage)
-    if mode == "start":
+    if mode == "":
         user_storage["card"]["footer"]["text"] = "Я вас не поняла, давайте попробуем еще раз."
         response.set_card(user_storage["card"])
     else:
@@ -64,24 +64,24 @@ def handle_dialog(request, response, user_storage, database):
                'Правила ты сможешь посмотреть в меню игры. Желаю хорошо провести время!'
         speech = text
         buttons = games[:]
-        mode = 'start'
+        mode = ''
         return message_return(response, user_storage, text, speech, buttons, mode, user_id, database)
 
-    elif mode.startswith('yesno') or (mode == 'start' and little_fuctions.isequal(input, 'Данетки')):
+    elif mode.startswith('yesno') or (mode == '' and little_fuctions.isequal(input, 'Данетки')):
         import yes_no_puzzle
         succes = yes_no_puzzle.start(input, user_id, database)
         if succes:
             return message_return(response, user_storage, *succes, user_id, database)
         else:
             return idk_return(response, user_storage, user_id, database, mode)
-    elif mode.startswith('Inever') or (mode == 'start' and little_fuctions.isequal(input, 'Я никогда не')):
+    elif mode.startswith('Inever') or (mode == '' and little_fuctions.isequal(input, 'Я никогда не')):
         import I_have_never_ever
         succes = I_have_never_ever.start(input, user_id, database)
         if succes:
             return message_return(response, user_storage, *succes, user_id, database)
         else:
             return idk_return(response, user_storage, user_id, database, mode)
-    elif mode.startswith('croco') or (mode == 'start' and little_fuctions.isequal(input, 'Крокодил')):
+    elif mode.startswith('croco') or (mode == '' and little_fuctions.isequal(input, 'Крокодил')):
         import croco
         succes = croco.start(input, user_id, database)
         if succes:
@@ -92,7 +92,7 @@ def handle_dialog(request, response, user_storage, database):
         text = little_fuctions.hello()
         speech = text
         buttons = games[:]
-        mode = 'start'
+        mode = ''
         return message_return(response, user_storage, text, speech, buttons, mode, user_id, database)
     else:
         return idk_return(response, user_storage, user_id, database, mode)
