@@ -12,6 +12,7 @@ def message_return(response, user_storage, text, speech, buttons, mode, user_id,
     buttons, user_storage = little_fuctions.get_suggests(user_storage)
     if mode == "":
         user_storage["card"] = start_card
+        user_storage["card"]["header"]["text"] = text
         response.set_card(user_storage["card"])
     else:
         response.set_buttons(buttons)
@@ -29,7 +30,7 @@ def idk_return(response, user_storage, user_id, database, mode):
     user_storage["suggests"] = buttons
     buttons, user_storage = little_fuctions.get_suggests(user_storage)
     if mode == "":
-        user_storage["card"]["footer"]["text"] = "Я вас не поняла, давайте попробуем еще раз."
+        user_storage["card"]["header"]["text"] = text
         response.set_card(user_storage["card"])
     else:
         response.set_buttons(buttons)
