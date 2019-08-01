@@ -145,7 +145,7 @@ croco_diff_card = {
             },
             "items": [
                 {
-                    "image_id": "965417/3719475fe4b3e591ba66",
+                    "image_id": "1652229/ca372f99ade8f3abfa2d",
                     "title": "Легкие",
                     "description": "Подойдет для разминки.",
                     "button": {
@@ -153,7 +153,7 @@ croco_diff_card = {
                     }
                 },
                 {
-                    "image_id": "1540737/8e6aaa8c57cb09e4ee6d",
+                    "image_id": "965417/3943d460730ddacafd10",
                     "title": "Нормальные",
                     "description": "Лучше всего для детей и начинающих.",
                     "button": {
@@ -161,7 +161,7 @@ croco_diff_card = {
                     }
                 },
                 {
-                    "image_id": "1652229/53a5121fe653254f5192",
+                    "image_id": "965417/cbbf8ffefb3954ca759f",
                     "title": "Сложные",
                     "description": "Вот где происходит реальная игра.",
                     "button": {
@@ -169,7 +169,7 @@ croco_diff_card = {
                     }
                 },
                 {
-                    "image_id": "1652229/53a5121fe653254f5192",
+                    "image_id": "1540737/fd344cd9bdbf892ccefd",
                     "title": "Невозможные",
                     "description": "Для самых смелых и находчивых.",
                     "button": {
