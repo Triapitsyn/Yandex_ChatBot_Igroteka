@@ -57,7 +57,7 @@ def idk_return(response, user_storage, user_id, database, mode):
         user_storage["card"]["header"]["text"] = text
         response.set_card(user_storage["card"])
     elif mode == "croco>difficulty":
-        user_storage["card"] = difficulty_card
+        user_storage["card"] = croco_diff_card
         user_storage["card"]["header"]["text"] = text
         response.set_card(user_storage["card"])
     else:
