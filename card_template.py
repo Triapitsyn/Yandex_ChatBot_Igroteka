@@ -5,7 +5,7 @@ start_card = {
             },
             "items": [
                 {
-                    "image_id": "1652229/0efc096e84a59fb58982",
+                    "image_id": "1540737/7af8bb1ace72acf19d8d",
                     "title": "Данетки",
                     "description": "Занимательная игра для компании друзей. Почувствуй себя детективом.",
                     "button": {
