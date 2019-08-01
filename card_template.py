@@ -80,34 +80,10 @@ croco_card = {
             "items": [
                 {
                     "image_id": "965417/3719475fe4b3e591ba66",
-                    "title": "Легкие",
-                    "description": "Подойдет для разминки.",
+                    "title": "Начать",
+                    "description": "Приятной игры!",
                     "button": {
-                        "payload": {"name": "Легкие"}
-                    }
-                },
-                {
-                    "image_id": "1540737/8e6aaa8c57cb09e4ee6d",
-                    "title": "Нормальные",
-                    "description": "Лучше всего для детей и начинающих.",
-                    "button": {
-                        "payload": {"name": "Нормальные"}
-                    }
-                },
-                {
-                    "image_id": "1652229/53a5121fe653254f5192",
-                    "title": "Сложные",
-                    "description": "Вот где происходит реальная игра.",
-                    "button": {
-                        "payload": {"name": "Сложные"}
-                    }
-                },
-{
-                    "image_id": "1652229/53a5121fe653254f5192",
-                    "title": "Невозможные",
-                    "description": "Для самых смелых и находчивых.",
-                    "button": {
-                        "payload": {"name": "Невозможные"}
+                        "payload": {"name": "Начать"}
                     }
                 },
 {
@@ -132,7 +108,7 @@ croco_card = {
 yesno_card = {
             "type": "ItemsList",
             "header": {
-                "text": "Крокодил",
+                "text": "Данетки",
             },
             "items": [
                 {
@@ -162,26 +138,42 @@ yesno_card = {
             ],
 }
 
-difficulty_card = {
+croco_diff_card = {
             "type": "ItemsList",
             "header": {
-                "text": "Крокодил",
+                "text": "Сложности",
             },
             "items": [
                 {
                     "image_id": "965417/3719475fe4b3e591ba66",
-                    "title": "Начать",
-                    "description": 'Для вашего удобства загадки будут представлены по возрастанию сложности.',
+                    "title": "Легкие",
+                    "description": "Подойдет для разминки.",
                     "button": {
-                        "payload": {"name": "Начать"}
+                        "payload": {"name": "Легкие"}
                     }
                 },
                 {
                     "image_id": "1540737/8e6aaa8c57cb09e4ee6d",
-                    "title": "Правила",
-                    "description": "Я быстро расскажу тебе немного правил.",
+                    "title": "Нормальные",
+                    "description": "Лучше всего для детей и начинающих.",
                     "button": {
-                        "payload": {"name": "Правила"}
+                        "payload": {"name": "Нормальные"}
+                    }
+                },
+                {
+                    "image_id": "1652229/53a5121fe653254f5192",
+                    "title": "Сложные",
+                    "description": "Вот где происходит реальная игра.",
+                    "button": {
+                        "payload": {"name": "Сложные"}
+                    }
+                },
+                {
+                    "image_id": "1652229/53a5121fe653254f5192",
+                    "title": "Невозможные",
+                    "description": "Для самых смелых и находчивых.",
+                    "button": {
+                        "payload": {"name": "Невозможные"}
                     }
                 },
                 {
