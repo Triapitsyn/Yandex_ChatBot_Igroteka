@@ -26,6 +26,10 @@ def message_return(response, user_storage, text, speech, buttons, mode, user_id,
         user_storage["card"] = inever_card
         user_storage["card"]["header"]["text"] = text
         response.set_card(user_storage["card"])
+    elif mode == "croco>difficulty":
+        user_storage["card"] = croco_diff_card
+        user_storage["card"]["header"]["text"] = text
+        response.set_card(user_storage["card"])
     else:
         response.set_buttons(buttons)
     database.update_entries('users_info', user_id, {'last_text': text}, update_type='rewrite')
