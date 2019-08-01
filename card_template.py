@@ -132,7 +132,7 @@ croco_card = {
 yesno_card = {
             "type": "ItemsList",
             "header": {
-                "text": "Крокодил",
+                "text": "Данетки",
             },
             "items": [
                 {

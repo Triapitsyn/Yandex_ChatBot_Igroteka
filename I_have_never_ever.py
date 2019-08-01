@@ -51,7 +51,7 @@ def start(input, id, database):
 
 
 def return_start():
-    text = ''
+    text = ' '
     speech = text
     buttons = ['Начать', 'Играть с разработчиком', 'Правила', 'В начало']
     return text, speech, buttons
