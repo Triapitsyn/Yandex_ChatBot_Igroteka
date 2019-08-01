@@ -8,13 +8,16 @@ def start(input, id, database):
     elif mode == '{}>main'.format(game) and little_fuctions.isequal(input, 'Правила'):
         text, speech, buttons = return_rules()
         mode = '{}>rules'.format(game)
+    elif mode.startswith('{}>main'.format(game)) and little_fuctions.isequal(input, 'Начать'):
+        text, speech, buttons = return_difficulties()
+        mode = '{}>difficulty'.format(game)
     elif mode.startswith('{}>rules'.format(game)) and little_fuctions.isequal(input, 'Начать'):
-        text, speech, buttons = return_start()
-        mode = '{}>main'.format(game)
+        text, speech, buttons = return_difficulties()
+        mode = '{}>difficulty'.format(game)
     elif mode.startswith('{}>diff>'.format(game)) and little_fuctions.isequal(input, 'Поменять сложность'):
-        text, speech, buttons = return_start()
-        mode = '{}>main'.format(game)
-    elif mode == '{}>main'.format(game):
+        text, speech, buttons = return_difficulties()
+        mode = '{}>difficulty'.format(game)
+    elif mode == '{}>difficulty'.format(game):
         if little_fuctions.isequal(input, 'Легкие'):
             mode = '{}>diff>easy'.format(game)
             text, speech, buttons = return_riddle('easy')
@@ -41,6 +44,12 @@ def start(input, id, database):
 
 
 def return_start():
+    text = ' '
+    speech = text
+    buttons = ['Легкие', 'Нормальные', 'Сложные', 'Невозможные', 'В начало']
+    return text, speech, buttons
+
+def return_difficulties():
     text = 'Выберите уровень сложности слов'
     speech = text
     buttons = ['Легкие', 'Нормальные', 'Сложные', 'Невозможные', 'В начало']
