@@ -21,7 +21,7 @@ start_card = {
                     }
                 },
                 {
-                    "image_id": "1652229/f0cb7f02dcddefe43e7e",
+                    "image_id": "1030494/150ab66a2d1f9a1889a0",
                     "title": "Крокодил",
                     "description": "Известная веселая игра, подходящая как взрослым, так и детям.",
                     "button": {
