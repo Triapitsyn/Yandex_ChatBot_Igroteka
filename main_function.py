@@ -14,6 +14,18 @@ def message_return(response, user_storage, text, speech, buttons, mode, user_id,
         user_storage["card"] = start_card
         user_storage["card"]["header"]["text"] = text
         response.set_card(user_storage["card"])
+    elif mode == "yesno>main":
+        user_storage["card"] = yesno_card
+        user_storage["card"]["header"]["text"] = text
+        response.set_card(user_storage["card"])
+    elif mode == "croco>main":
+        user_storage["card"] = croco_card
+        user_storage["card"]["header"]["text"] = text
+        response.set_card(user_storage["card"])
+    elif mode == "Inever>main":
+        user_storage["card"] = inever_card
+        user_storage["card"]["header"]["text"] = text
+        response.set_card(user_storage["card"])
     else:
         response.set_buttons(buttons)
     database.update_entries('users_info', user_id, {'last_text': text}, update_type='rewrite')
@@ -30,6 +42,18 @@ def idk_return(response, user_storage, user_id, database, mode):
     user_storage["suggests"] = buttons
     buttons, user_storage = little_fuctions.get_suggests(user_storage)
     if mode == "":
+        user_storage["card"] = start_card
+        user_storage["card"]["header"]["text"] = text
+        response.set_card(user_storage["card"])
+    elif mode == "yesno>main":
+        user_storage["card"] = yesno_card
+        response.set_card(user_storage["card"])
+    elif mode == "croco>main":
+        user_storage["card"] = croco_card
+        user_storage["card"]["header"]["text"] = text
+        response.set_card(user_storage["card"])
+    elif mode == "Inever>main":
+        user_storage["card"] = inever_card
         user_storage["card"]["header"]["text"] = text
         response.set_card(user_storage["card"])
     else:
