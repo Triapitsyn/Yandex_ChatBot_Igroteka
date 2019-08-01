@@ -21,8 +21,9 @@ def start(input, id, database):
         text, speech, buttons = return_rules()
         mode = '{}>rules'.format(game)
     elif mode == '{}>another_rules'.format(game) and little_fuctions.isequal(input, 'Варианты действий'):
-        import I_have_never_ever_biblio
-        text = 'Я никогда не...\n' + '\n'.join([ str(i + 1) + ') ' + j for i, j in enumerate(I_have_never_ever_biblio.questions)])
+        import I_have_never_ever_biblio, random
+        text = 'У нас много вариантов, покажу случайные 20\n\n' \
+               'Я никогда не...\n' + '\n'.join([ str(i + 1) + ') ' + j for i, j in enumerate(random.shuffle(I_have_never_ever_biblio.questions)[:20])])
         speech = 'Приятной игры!'
         buttons = ['В начало']
         mode = '{}>another'.format(game)
