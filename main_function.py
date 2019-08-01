@@ -56,6 +56,10 @@ def idk_return(response, user_storage, user_id, database, mode):
         user_storage["card"] = inever_card
         user_storage["card"]["header"]["text"] = text
         response.set_card(user_storage["card"])
+    elif mode == "croco>difficulty":
+        user_storage["card"] = difficulty_card
+        user_storage["card"]["header"]["text"] = text
+        response.set_card(user_storage["card"])
     else:
         response.set_buttons(buttons)
     return response, user_storage

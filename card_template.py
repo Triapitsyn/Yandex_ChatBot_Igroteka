@@ -161,3 +161,36 @@ yesno_card = {
                 }
             ],
 }
+
+difficulty_card = {
+            "type": "ItemsList",
+            "header": {
+                "text": "Крокодил",
+            },
+            "items": [
+                {
+                    "image_id": "965417/3719475fe4b3e591ba66",
+                    "title": "Начать",
+                    "description": 'Для вашего удобства загадки будут представлены по возрастанию сложности.',
+                    "button": {
+                        "payload": {"name": "Начать"}
+                    }
+                },
+                {
+                    "image_id": "1540737/8e6aaa8c57cb09e4ee6d",
+                    "title": "Правила",
+                    "description": "Я быстро расскажу тебе немного правил.",
+                    "button": {
+                        "payload": {"name": "Правила"}
+                    }
+                },
+                {
+                    "image_id": "1652229/53a5121fe653254f5192",
+                    "title": "В начало",
+                    "description": "Вернуться к истокам.",
+                    "button": {
+                        "payload": {"name": "В начало"}
+                    }
+                }
+            ],
+}
