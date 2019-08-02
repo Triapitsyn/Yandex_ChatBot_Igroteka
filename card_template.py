@@ -165,7 +165,7 @@ croco_diff_card = {
                     }
                 },
                 {
-                    "image_id": "965417/3943d460730ddacafd10",
+                    "image_id": "213044/353827f4d49713a35cb4",
                     "title": "Нормальные",
                     "description": "Лучше всего для детей и начинающих.",
                     "button": {
