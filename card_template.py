@@ -27,6 +27,14 @@ start_card = {
                     "button": {
                         "payload": {"name": "Крокодил"}
                     }
+                },
+{
+                    "image_id": "1652229/e6e0eb9811b4bdc24d22",
+                    "title": "Помощь",
+                    "description": "Я помогу тебе разобраться в этом навыке.",
+                    "button": {
+                        "payload": {"name": "Помощь"}
+                    }
                 }
             ],
 }
