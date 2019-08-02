@@ -9,7 +9,7 @@ start_card = {
             },
             "items": [
                 {
-                    "image_id": "937455/db61cd66e561085ca3ca",
+                    "image_id": "1652229/7c3339e7fe69bdc4f353",
                     "title": "Данетки",
                     "description": "Занимательная игра для друзей. Почувствуй себя детективом.",
                     "button": {
@@ -25,7 +25,7 @@ start_card = {
                     }
                 },
                 {
-                    "image_id": "1652229/a5e146409fec492d96ee",
+                    "image_id": "1540737/e4f18f914499c70be0d4",
                     "title": "Крокодил",
                     "description": "Известная веселая игра, подходящая как взрослым, так и детям.",
                     "button": {
@@ -33,7 +33,7 @@ start_card = {
                     }
                 },
 {
-                    "image_id": "1652229/dbd3897cf1619fada0bc",
+                    "image_id": "937455/425ee5f062cb333a36b8",
                     "title": "Помощь",
                     "description": "Я помогу тебе разобраться в этом навыке.",
                     "button": {
@@ -58,7 +58,7 @@ inever_card = {
                     }
                 },
                 {
-                    "image_id": "1030494/8c92741c360c7d966f3e",
+                    "image_id": "965417/cbafe44df6130a53c3dc",
                     "title": "Играть с разработчиком",
                     "description": "Кто-то из команды разработчиков сыграет с вами.",
                     "button": {
