@@ -29,7 +29,7 @@ start_card = {
                     }
                 },
 {
-                    "image_id": "1652229/e6e0eb9811b4bdc24d22",
+                    "image_id": "1540737/329d428f1a252a43562f",
                     "title": "Помощь",
                     "description": "Я помогу тебе разобраться в этом навыке.",
                     "button": {
