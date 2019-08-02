@@ -1,5 +1,5 @@
 home = "1540737/d69dcdc41391ac7792eb"
-rules = "213044/78d4a3bb6694dffd6ef1"
+rules = "965417/00447ee42d0940013267"
 start = '213044/ac8b99901684ea69b23d'
 
 start_card = {
