@@ -54,7 +54,7 @@ inever_card = {
                     }
                 },
                 {
-                    "image_id": "1652229/7b197d3d8eb5110ab7ca",
+                    "image_id": "1652229/34d8951e0a6660050be6",
                     "title": "Правила",
                     "description": "Я быстро расскажу тебе немного правил.",
                     "button": {
