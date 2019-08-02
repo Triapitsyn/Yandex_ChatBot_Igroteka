@@ -5,7 +5,7 @@ start_card = {
             },
             "items": [
                 {
-                    "image_id": "965417/bbb14ec7f210ad4f4b68",
+                    "image_id": "1652229/362f4d24216010221cfc",
                     "title": "Данетки",
                     "description": "Занимательная игра для друзей. Почувствуй себя детективом.",
                     "button": {
@@ -13,7 +13,7 @@ start_card = {
                     }
                 },
                 {
-                    "image_id": "213044/0b122e0039642e91d53d",
+                    "image_id": "965417/449b8bf3870b13d4451a",
                     "title": "Я никогда не",
                     "description": "Игра сближает людей. Узнайте друг о друге много нового.",
                     "button": {
@@ -21,7 +21,7 @@ start_card = {
                     }
                 },
                 {
-                    "image_id": "1652229/89abfc3645c2b70bd5c9",
+                    "image_id": "1540737/90882fda713ddc596aca",
                     "title": "Крокодил",
                     "description": "Известная веселая игра, подходящая как взрослым, так и детям.",
                     "button": {
@@ -62,7 +62,7 @@ inever_card = {
                     }
                 },
                 {
-                    "image_id": "1652229/57892af6bfb8b05dfb31",
+                    "image_id": "1540737/45852aef3beb47fa90d5",
                     "title": "В начало",
                     "description": "Вернуться к истокам.",
                     "button": {
@@ -87,7 +87,7 @@ croco_card = {
                     }
                 },
 {
-                    "image_id": "1652229/34d8951e0a6660050be6",
+                    "image_id": "213044/78d4a3bb6694dffd6ef1",
                     "title": "Правила",
                     "description": "Я быстро расскажу тебе немного правил.",
                     "button": {
@@ -95,7 +95,7 @@ croco_card = {
                     }
                 },
 {
-                    "image_id": "1652229/57892af6bfb8b05dfb31",
+                    "image_id": "1540737/45852aef3beb47fa90d5",
                     "title": "В начало",
                     "description": "Вернуться к истокам.",
                     "button": {
@@ -120,7 +120,7 @@ yesno_card = {
                     }
                 },
                 {
-                    "image_id": "1652229/34d8951e0a6660050be6",
+                    "image_id": "213044/78d4a3bb6694dffd6ef1",
                     "title": "Правила",
                     "description": "Я быстро расскажу тебе немного правил.",
                     "button": {
@@ -128,7 +128,7 @@ yesno_card = {
                     }
                 },
                 {
-                    "image_id": "1652229/57892af6bfb8b05dfb31",
+                    "image_id": "1540737/45852aef3beb47fa90d5",
                     "title": "В начало",
                     "description": "Вернуться к истокам.",
                     "button": {
@@ -177,7 +177,7 @@ croco_diff_card = {
                     }
                 },
                 {
-                    "image_id": "1652229/57892af6bfb8b05dfb31",
+                    "image_id": "1540737/45852aef3beb47fa90d5",
                     "title": "В начало",
                     "description": "Вернуться к истокам.",
                     "button": {
