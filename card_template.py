@@ -29,7 +29,7 @@ start_card = {
                     }
                 },
 {
-                    "image_id": "1652229/362f4d24216010221cfc",
+                    "image_id": "1540737/329d428f1a252a43562f",
                     "title": "Помощь",
                     "description": "Я помогу тебе разобраться в этом навыке.",
                     "button": {
@@ -70,7 +70,7 @@ inever_card = {
                     }
                 },
                 {
-                    "image_id": "1540737/45852aef3beb47fa90d5",
+                    "image_id": "965417/3d92093be6a787c5c589",
                     "title": "В начало",
                     "description": "Вернуться к истокам.",
                     "button": {
@@ -103,7 +103,7 @@ croco_card = {
                     }
                 },
 {
-                    "image_id": "1540737/45852aef3beb47fa90d5",
+                    "image_id": "965417/3d92093be6a787c5c589",
                     "title": "В начало",
                     "description": "Вернуться к истокам.",
                     "button": {
@@ -136,7 +136,7 @@ yesno_card = {
                     }
                 },
                 {
-                    "image_id": "1540737/45852aef3beb47fa90d5",
+                    "image_id": "965417/3d92093be6a787c5c589",
                     "title": "В начало",
                     "description": "Вернуться к истокам.",
                     "button": {
@@ -185,7 +185,7 @@ croco_diff_card = {
                     }
                 },
                 {
-                    "image_id": "1540737/45852aef3beb47fa90d5",
+                    "image_id": "965417/3d92093be6a787c5c589",
                     "title": "В начало",
                     "description": "Вернуться к истокам.",
                     "button": {
