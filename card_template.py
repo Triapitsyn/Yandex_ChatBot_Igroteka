@@ -1,6 +1,6 @@
-home = "1540737/d69dcdc41391ac7792eb"
+home = "1652229/c2193d73b25401b5362a"
 rules = "965417/00447ee42d0940013267"
-start = '213044/ac8b99901684ea69b23d'
+start = '1540737/79627bde770d8f34397c'
 
 start_card = {
             "type": "ItemsList",
