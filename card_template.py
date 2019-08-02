@@ -62,7 +62,7 @@ inever_card = {
                     }
                 },
                 {
-                    "image_id": "1652229/53a5121fe653254f5192",
+                    "image_id": "213044/8f8fdc3d8e883bccc4c9",
                     "title": "В начало",
                     "description": "Вернуться к истокам.",
                     "button": {
@@ -95,7 +95,7 @@ croco_card = {
                     }
                 },
 {
-                    "image_id": "1652229/53a5121fe653254f5192",
+                    "image_id": "213044/8f8fdc3d8e883bccc4c9",
                     "title": "В начало",
                     "description": "Вернуться к истокам.",
                     "button": {
@@ -128,7 +128,7 @@ yesno_card = {
                     }
                 },
                 {
-                    "image_id": "1652229/53a5121fe653254f5192",
+                    "image_id": "213044/8f8fdc3d8e883bccc4c9",
                     "title": "В начало",
                     "description": "Вернуться к истокам.",
                     "button": {
@@ -177,7 +177,7 @@ croco_diff_card = {
                     }
                 },
                 {
-                    "image_id": "1652229/53a5121fe653254f5192",
+                    "image_id": "213044/8f8fdc3d8e883bccc4c9",
                     "title": "В начало",
                     "description": "Вернуться к истокам.",
                     "button": {
