@@ -1,6 +1,6 @@
 home = "1540737/d69dcdc41391ac7792eb"
 rules = "213044/78d4a3bb6694dffd6ef1"
-start = '1030494/e46c8fbb1eecc950c7c3'
+start = '213044/ac8b99901684ea69b23d'
 
 start_card = {
             "type": "ItemsList",
@@ -9,7 +9,7 @@ start_card = {
             },
             "items": [
                 {
-                    "image_id": "937455/21b3781250d39a1249c4",
+                    "image_id": "937455/db61cd66e561085ca3ca",
                     "title": "Данетки",
                     "description": "Занимательная игра для друзей. Почувствуй себя детективом.",
                     "button": {
@@ -33,7 +33,7 @@ start_card = {
                     }
                 },
 {
-                    "image_id": "1030494/72deed031c0da3f7a7eb",
+                    "image_id": "1652229/dbd3897cf1619fada0bc",
                     "title": "Помощь",
                     "description": "Я помогу тебе разобраться в этом навыке.",
                     "button": {
@@ -58,7 +58,7 @@ inever_card = {
                     }
                 },
                 {
-                    "image_id": "1652229/6a53ddf484c289a69b76",
+                    "image_id": "1030494/8c92741c360c7d966f3e",
                     "title": "Играть с разработчиком",
                     "description": "Кто-то из команды разработчиков сыграет с вами.",
                     "button": {
