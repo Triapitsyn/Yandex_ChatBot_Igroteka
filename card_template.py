@@ -173,7 +173,7 @@ croco_diff_card = {
                     }
                 },
                 {
-                    "image_id": "1030494/f40857acf29a77d489e8",
+                    "image_id": "1652229/8b1dfcea37a970a08596",
                     "title": "Сложные",
                     "description": "Вот где происходит реальная игра.",
                     "button": {
