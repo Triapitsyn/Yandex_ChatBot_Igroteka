@@ -1,3 +1,7 @@
+home = "965417/3d92093be6a787c5c589"
+rules = "213044/78d4a3bb6694dffd6ef1"
+start = '1030494/e46c8fbb1eecc950c7c3'
+
 start_card = {
             "type": "ItemsList",
             "header": {
@@ -5,7 +9,7 @@ start_card = {
             },
             "items": [
                 {
-                    "image_id": "1652229/362f4d24216010221cfc",
+                    "image_id": "937455/21b3781250d39a1249c4",
                     "title": "Данетки",
                     "description": "Занимательная игра для друзей. Почувствуй себя детективом.",
                     "button": {
@@ -29,7 +33,7 @@ start_card = {
                     }
                 },
 {
-                    "image_id": "1540737/329d428f1a252a43562f",
+                    "image_id": "1030494/72deed031c0da3f7a7eb",
                     "title": "Помощь",
                     "description": "Я помогу тебе разобраться в этом навыке.",
                     "button": {
@@ -46,7 +50,7 @@ inever_card = {
             },
             "items": [
                 {
-                    "image_id": "965417/3719475fe4b3e591ba66",
+                    "image_id": start,
                     "title": "Начать",
                     "description": "Не забудь уточнить правила. Приятной игры!",
                     "button": {
@@ -54,7 +58,7 @@ inever_card = {
                     }
                 },
                 {
-                    "image_id": "965417/3719475fe4b3e591ba66",
+                    "image_id": "1652229/6a53ddf484c289a69b76",
                     "title": "Играть с разработчиком",
                     "description": "Кто-то из команды разработчиков сыграет с вами.",
                     "button": {
@@ -62,7 +66,7 @@ inever_card = {
                     }
                 },
                 {
-                    "image_id": "213044/78d4a3bb6694dffd6ef1",
+                    "image_id": rules,
                     "title": "Правила",
                     "description": "Я быстро расскажу тебе немного правил.",
                     "button": {
@@ -70,7 +74,7 @@ inever_card = {
                     }
                 },
                 {
-                    "image_id": "965417/3d92093be6a787c5c589",
+                    "image_id": home,
                     "title": "В начало",
                     "description": "Вернуться к истокам.",
                     "button": {
@@ -87,7 +91,7 @@ croco_card = {
             },
             "items": [
                 {
-                    "image_id": "965417/3719475fe4b3e591ba66",
+                    "image_id": start,
                     "title": "Начать",
                     "description": "Не забудь уточнить правила. Приятной игры!",
                     "button": {
@@ -95,7 +99,7 @@ croco_card = {
                     }
                 },
 {
-                    "image_id": "213044/78d4a3bb6694dffd6ef1",
+                    "image_id": rules,
                     "title": "Правила",
                     "description": "Я быстро расскажу тебе немного правил.",
                     "button": {
@@ -103,7 +107,7 @@ croco_card = {
                     }
                 },
 {
-                    "image_id": "965417/3d92093be6a787c5c589",
+                    "image_id": home,
                     "title": "В начало",
                     "description": "Вернуться к истокам.",
                     "button": {
@@ -120,7 +124,7 @@ yesno_card = {
             },
             "items": [
                 {
-                    "image_id": "965417/3719475fe4b3e591ba66",
+                    "image_id": start,
                     "title": "Начать",
                     "description": 'Не забудь уточнить правила. Приятной игры!',
                     "button": {
@@ -128,7 +132,7 @@ yesno_card = {
                     }
                 },
                 {
-                    "image_id": "213044/78d4a3bb6694dffd6ef1",
+                    "image_id": rules,
                     "title": "Правила",
                     "description": "Я быстро расскажу тебе немного правил.",
                     "button": {
@@ -136,7 +140,7 @@ yesno_card = {
                     }
                 },
                 {
-                    "image_id": "965417/3d92093be6a787c5c589",
+                    "image_id": home,
                     "title": "В начало",
                     "description": "Вернуться к истокам.",
                     "button": {
@@ -185,7 +189,7 @@ croco_diff_card = {
                     }
                 },
                 {
-                    "image_id": "965417/3d92093be6a787c5c589",
+                    "image_id": home,
                     "title": "В начало",
                     "description": "Вернуться к истокам.",
                     "button": {
