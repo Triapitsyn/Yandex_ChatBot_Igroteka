@@ -157,7 +157,7 @@ croco_diff_card = {
             },
             "items": [
                 {
-                    "image_id": "965417/436380214a2be0c5cc73",
+                    "image_id": "1030494/f17aed3293f46bf1e960",
                     "title": "Легкие",
                     "description": "Подойдет для разминки.",
                     "button": {
