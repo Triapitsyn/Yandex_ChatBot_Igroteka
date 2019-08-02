@@ -5,7 +5,7 @@ start_card = {
             },
             "items": [
                 {
-                    "image_id": "1652229/bd36ebdfd95ec7ae3ad8",
+                    "image_id": "965417/bbb14ec7f210ad4f4b68",
                     "title": "Данетки",
                     "description": "Занимательная игра для друзей. Почувствуй себя детективом.",
                     "button": {
@@ -62,7 +62,7 @@ inever_card = {
                     }
                 },
                 {
-                    "image_id": "213044/8f8fdc3d8e883bccc4c9",
+                    "image_id": "1652229/57892af6bfb8b05dfb31",
                     "title": "В начало",
                     "description": "Вернуться к истокам.",
                     "button": {
@@ -95,7 +95,7 @@ croco_card = {
                     }
                 },
 {
-                    "image_id": "213044/8f8fdc3d8e883bccc4c9",
+                    "image_id": "1652229/57892af6bfb8b05dfb31",
                     "title": "В начало",
                     "description": "Вернуться к истокам.",
                     "button": {
@@ -128,7 +128,7 @@ yesno_card = {
                     }
                 },
                 {
-                    "image_id": "213044/8f8fdc3d8e883bccc4c9",
+                    "image_id": "1652229/57892af6bfb8b05dfb31",
                     "title": "В начало",
                     "description": "Вернуться к истокам.",
                     "button": {
@@ -177,7 +177,7 @@ croco_diff_card = {
                     }
                 },
                 {
-                    "image_id": "213044/8f8fdc3d8e883bccc4c9",
+                    "image_id": "1652229/57892af6bfb8b05dfb31",
                     "title": "В начало",
                     "description": "Вернуться к истокам.",
                     "button": {
