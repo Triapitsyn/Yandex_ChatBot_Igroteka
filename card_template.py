@@ -181,7 +181,7 @@ croco_diff_card = {
                     }
                 },
                 {
-                    "image_id": "1540737/fd344cd9bdbf892ccefd",
+                    "image_id": "1652229/131158d510f8dc34c9a4",
                     "title": "Невозможные",
                     "description": "Для самых смелых и находчивых.",
                     "button": {
