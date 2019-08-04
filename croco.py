@@ -47,13 +47,13 @@ def return_start():
     import little_fuctions
     text = little_fuctions.ready()
     speech = text
-    buttons = ['Легкие', 'Нормальные', 'Сложные', 'Невозможные', 'В начало']
+    buttons = ['Легкие', 'Средние', 'Сложные', 'Невозможные', 'В начало']
     return text, speech, buttons
 
 def return_difficulties():
     text = 'Выберите уровень сложности слов'
     speech = text
-    buttons = ['Легкие', 'Нормальные', 'Сложные', 'Невозможные', 'В начало']
+    buttons = ['Легкие', 'Средние', 'Сложные', 'Невозможные', 'В начало']
     return text, speech, buttons
 
 def return_rules():
