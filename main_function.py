@@ -11,23 +11,23 @@ def message_return(response, user_storage, text, speech, buttons, mode, user_id,
     database.update_entries('users_info', user_id, {'last_buttons': '#'.join(buttons)}, update_type='rewrite')
     buttons, user_storage = little_fuctions.get_suggests(user_storage)
     if mode == "":
-        user_storage["card"] = start_card
+        user_storage["card"] = start_card(little_fuctions.get_color(user_id, database))
         user_storage["card"]["header"]["text"] = text
         response.set_card(user_storage["card"])
     elif mode == "yesno>main":
-        user_storage["card"] = yesno_card
+        user_storage["card"] = yesno_card(little_fuctions.get_color(user_id, database))
         user_storage["card"]["header"]["text"] = text
         response.set_card(user_storage["card"])
     elif mode == "croco>main":
-        user_storage["card"] = croco_card
+        user_storage["card"] = croco_card(little_fuctions.get_color(user_id, database))
         user_storage["card"]["header"]["text"] = text
         response.set_card(user_storage["card"])
     elif mode == "Inever>main":
-        user_storage["card"] = inever_card
+        user_storage["card"] = inever_card(little_fuctions.get_color(user_id, database))
         user_storage["card"]["header"]["text"] = text
         response.set_card(user_storage["card"])
     elif mode == "croco>difficulty":
-        user_storage["card"] = croco_diff_card
+        user_storage["card"] = croco_diff_card(little_fuctions.get_color(user_id, database))
         user_storage["card"]["header"]["text"] = text
         response.set_card(user_storage["card"])
     else:
@@ -121,11 +121,18 @@ def handle_dialog(request, response, user_storage, database):
             return message_return(response, user_storage, *succes, user_id, database)
         else:
             return idk_return(response, user_storage, user_id, database, mode)
+    elif mode == '' and little_fuctions.isequal(input, 'Сменить цвета'):
+        little_fuctions.update_color(little_fuctions.get_color(user_id, database), user_id, database)
+        text = little_fuctions.hello()
+        speech = text
+        mode = ''
+        buttons = []
+        return message_return(response, user_storage, text, speech, buttons, mode, user_id, database)
     elif mode == '':
         text = little_fuctions.hello()
         speech = text
-        buttons = games[:]
         mode = ''
+        buttons = []
         little_fuctions.update_set(set(), user_id, database)
         return message_return(response, user_storage, text, speech, buttons, mode, user_id, database)
     else:
