@@ -121,7 +121,7 @@ def handle_dialog(request, response, user_storage, database):
             return message_return(response, user_storage, *succes, user_id, database)
         else:
             return idk_return(response, user_storage, user_id, database, mode)
-    elif mode == '' and input == '':
+    elif mode == '':
         text = little_fuctions.hello()
         speech = text
         buttons = games[:]
