@@ -44,7 +44,8 @@ def start(input, id, database):
 
 
 def return_start():
-    text = 'Начнем?'
+    import little_fuctions
+    text = little_fuctions.ready()
     speech = text
     buttons = ['Начать', 'Играть с разработчиком', 'Правила', 'В начало']
     return text, speech, buttons
@@ -86,8 +87,7 @@ def return_riddle(fl, id, database):
     little_fuctions.update_set(used, id, database)
     text='{}{}'.format('Я никогда не ' + choice,
                        '\n\nМой ответ - {}'.format(random.choice(['Я делал это', 'Я не делал это']))*fl)
-    speech='{}{}'.format('Я никогда не ' + choice,
-                         '\n\nМой ответ - {}'.format(random.choice(['Я делал это', 'Я не делал это']))*fl)
+    speech=text
 
     buttons = ['Дальше', 'В начало']
     return text, speech, buttons

@@ -44,7 +44,8 @@ def start(input, id, database):
 
 
 def return_start():
-    text = 'Начинаем?'
+    import little_fuctions
+    text = little_fuctions.ready()
     speech = text
     buttons = ['Легкие', 'Нормальные', 'Сложные', 'Невозможные', 'В начало']
     return text, speech, buttons

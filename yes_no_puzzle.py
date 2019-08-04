@@ -35,7 +35,8 @@ def start(input, id, database):
 
 
 def return_start():
-    text = 'Начнем?'
+    import little_fuctions
+    text = little_fuctions.ready()
     speech = text
     buttons = ['Начать', 'Правила', 'В начало']
     return text, speech, buttons
@@ -66,4 +67,4 @@ def return_riddle(number):
         buttons = ['Дальше', 'Пропустить 10', 'В начало']
     else:
         buttons=['Дальше', 'Назад', 'Пропустить 10', 'В начало']
-    return text, speech, buttons
+    return text.replace('+', ''), speech, buttons
