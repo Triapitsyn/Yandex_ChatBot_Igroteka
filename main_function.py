@@ -39,7 +39,7 @@ def message_return(response, user_storage, text, speech, buttons, mode, user_id,
 def idk_return(response, user_storage, user_id, database, mode):
     last_text, last_speech, last_buttons = little_fuctions.get_lasts(user_id, database)
     text = 'Я вас не поняла, давайте попробуем еще раз.\n\n{}'.format(last_text)
-    speech = 'Я вас не поняла, давайте попробуем еще раз.'.format(last_speech)
+    speech = 'Я вас не поняла, давайте попробуем еще раз.\n\n{}'.format(last_speech)
     buttons = last_buttons
     response.set_text(text)
     response.set_tts(speech)
