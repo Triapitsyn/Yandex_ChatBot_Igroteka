@@ -9,10 +9,10 @@ def start(input, id, database):
         text, speech, buttons = return_rules()
         mode = '{}>rules'.format(game)
     elif (mode == '{}>rules'.format(game) or mode == '{}>main'.format(game)) and little_fuctions.isequal(input, 'Начать'):
-        text, speech, buttons = return_riddle(1, 0)
+        text, speech, buttons = return_riddle(0, id, database)
         mode = '{}>riddle>1>0'.format(game)
     elif (mode == '{}>rules'.format(game) or mode == '{}>main'.format(game)) and little_fuctions.isequal(input, 'Играть с разработчиком'):
-        text, speech, buttons = return_riddle(1, 1)
+        text, speech, buttons = return_riddle(1, id, database)
         mode = '{}>riddle>1>1'.format(game)
     elif mode == '{}>rules'.format(game) and little_fuctions.isequal(input, 'Другой вариант игры'):
         text, speech, buttons = return_another_rules()
@@ -33,19 +33,9 @@ def start(input, id, database):
         import I_have_never_ever_biblio
         number = int(mode.split('>')[2])
         fl = int(mode.split('>')[3])
-        if little_fuctions.isequal(input, 'Назад'):
-            text, speech, buttons = return_riddle(number - 1, fl)
-            mode = '{}>riddle>{}>{}'.format(game, number - 1, fl)
-        elif little_fuctions.isequal(input, 'Дальше'):
-            text, speech, buttons = return_riddle(number + 1, fl)
-            mode = '{}>riddle>{}>{}'.format(game, min(number + 1, len(I_have_never_ever_biblio.questions)), fl)
-        elif little_fuctions.isequal(input.split()[0], 'Пропустить'):
-            if input.split()[1].isdigit():
-                skip = int(input.split()[1])
-            else:
-                skip = 1
-            text, speech, buttons = return_riddle(number + skip, fl)
-            mode = '{}>riddle>{}>{}'.format(game, min(number + skip, len(I_have_never_ever_biblio.questions)), fl)
+        if little_fuctions.isequal(input, 'Дальше'):
+            text, speech, buttons = return_riddle(fl, id, database)
+            mode = '{}>riddle>{}>{}'.format(game, number, fl)
         else:
             return False
     else:
@@ -61,8 +51,7 @@ def return_start():
 
 def return_rules():
     text='Я буду описывать действия, а каждый из вас должен честно отвечать делал он его или нет. ' \
-         'Эта игра позволяет узнать друг о друге много нового и интересного.\n\n' \
-         'Вы можете использовать команду "пропустить" с любым числом.'
+         'Эта игра позволяет узнать друг о друге много нового и интересного.\n\n'
     speech=text
     buttons=['Начать', 'Играть с разработчиком', 'Другой вариант игры', 'В начало']
     return text, speech, buttons
@@ -81,24 +70,24 @@ def return_another_rules():
     buttons = ['Варианты действий', 'Другой вариант игры', 'В начало']
     return text, speech, buttons
 
-def return_riddle(number, fl):
+def return_riddle(fl, id, database):
     import I_have_never_ever_biblio
     import random
+    import little_fuctions
 
-    warning = ''
-    if number > len(I_have_never_ever_biblio.questions):
-        number = len(I_have_never_ever_biblio.questions)
-        warning = 'Сегодня у нас только {} вопросов, показываю последний.\n\n'.format(number)
-
-    text='{}{}{}'.format(str(number)+') ' if not warning else warning,
-                         'Я никогда не ' + I_have_never_ever_biblio.questions[number - 1],
-                         '\n\nМой ответ - {}'.format(random.choice(['Я делал это', 'Я не делал это']))*fl)
-    speech='{}{}{}'.format(warning,
-                           'Я никогда не ' + I_have_never_ever_biblio.questions[number - 1],
-                           '\n\nМой ответ - {}'.format(random.choice(['Я делал это', 'Я не делал это']))*fl)
-
-    if number == 1:
-        buttons = ['Дальше', 'Пропустить 10', 'В начало']
+    used = little_fuctions.get_set(id, database)
+    choice = set(I_have_never_ever_biblio.questions).difference(used)
+    if not choice:
+        choice = random.choice(I_have_never_ever_biblio.questions)
+        used = set()
     else:
-        buttons=['Дальше', 'Назад', 'Пропустить 10', 'В начало']
+        choice = random.choice(choice)
+    used.add(choice)
+    little_fuctions.update_set(used, id, database)
+    text='{}{}'.format('Я никогда не ' + choice,
+                       '\n\nМой ответ - {}'.format(random.choice(['Я делал это', 'Я не делал это']))*fl)
+    speech='{}{}'.format('Я никогда не ' + choice,
+                         '\n\nМой ответ - {}'.format(random.choice(['Я делал это', 'Я не делал это']))*fl)
+
+    buttons = ['Дальше', 'В начало']
     return text, speech, buttons
