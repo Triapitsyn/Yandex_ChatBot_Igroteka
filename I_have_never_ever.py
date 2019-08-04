@@ -81,7 +81,7 @@ def return_riddle(fl, id, database):
         choice = random.choice(I_have_never_ever_biblio.questions)
         used = set()
     else:
-        choice = random.choice(choice)
+        choice = random.choice(list(choice))
     used.add(choice)
     little_fuctions.update_set(used, id, database)
     text='{}{}'.format('Я никогда не ' + choice,
