@@ -20,22 +20,22 @@ def start(input, id, database):
     elif mode == '{}>difficulty'.format(game):
         if little_fuctions.isequal(input, 'Легкие'):
             mode = '{}>diff>easy'.format(game)
-            text, speech, buttons = return_riddle('easy')
+            text, speech, buttons = return_riddle('easy', id, database)
         elif little_fuctions.isequal(input, 'Нормальные'):
             mode = '{}>diff>medium'.format(game)
-            text, speech, buttons = return_riddle('medium')
+            text, speech, buttons = return_riddle('medium', id, database)
         elif little_fuctions.isequal(input, 'Сложные'):
             mode = '{}>diff>pro'.format(game)
-            text, speech, buttons = return_riddle('pro')
+            text, speech, buttons = return_riddle('pro', id, database)
         elif little_fuctions.isequal(input, 'Невозможные'):
             mode = '{}>diff>unreal'.format(game)
-            text, speech, buttons = return_riddle('unreal')
+            text, speech, buttons = return_riddle('unreal', id, database)
         else:
             return False
     elif mode.startswith('{}>diff>'.format(game)):
         difficulty = mode.split('>')[2]
         if little_fuctions.isequal(input, 'Дальше'):
-            text, speech, buttons = return_riddle(difficulty)
+            text, speech, buttons = return_riddle(difficulty, id, database)
         else:
             return False
     else:
@@ -64,10 +64,18 @@ def return_rules():
     buttons=['Начать', 'В начало']
     return text, speech, buttons
 
-def return_riddle(difficulty):
-    import croco_biblio, random
+def return_riddle(difficulty, id, database):
+    import croco_biblio, random, little_fuctions
 
-    text=random.choice(croco_biblio.words[difficulty])
+    used = little_fuctions.get_set(id, database)
+    mediator = set(croco_biblio.words[difficulty]).difference(used)
+    if not mediator:
+        little_fuctions.update_set(set(), id, database)
+        mediator = set(croco_biblio.words[difficulty])
+        used = set()
+    text=random.choice(list(mediator))
+    used.add(text)
+    little_fuctions.update_set(used, id, database)
     speech=random.choice(croco_biblio.phrase[difficulty])
     buttons=['Дальше', 'Поменять сложность', 'В начало']
     return text, speech, buttons
