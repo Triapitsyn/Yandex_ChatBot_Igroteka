@@ -42,11 +42,11 @@ def update_mode(user_id, mode, database):
 
 
 def get_set(user_id, database):
-    return database.get_entry("users_info", ['word_set'], {'request_id': user_id})[0][0]
+    return database.get_entry("users_info", ['word_set'], {'request_id': user_id})[0][0].split("#$")
 
 
 def update_set(word_set, user_id, database):
-    database.update_entries('users_info', user_id, {'word_set': word_set}, update_type='rewrite')
+    database.update_entries('users_info', user_id, {'word_set': "#$".join(list(word_set))}, update_type='rewrite')
     return True
 
 
