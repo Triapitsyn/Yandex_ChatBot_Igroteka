@@ -122,7 +122,7 @@ def handle_dialog(request, response, user_storage, database):
         else:
             return idk_return(response, user_storage, user_id, database, mode)
     elif mode == '' and little_fuctions.isequal(input, 'Сменить цвета'):
-        little_fuctions.update_color(little_fuctions.get_color(user_id, database), user_id, database)
+        little_fuctions.update_color(little_fuctions.get_color(user_id, database) + 1, user_id, database)
         text = little_fuctions.hello()
         speech = text
         mode = ''
