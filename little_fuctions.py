@@ -50,6 +50,15 @@ def update_set(word_set, user_id, database):
     return True
 
 
+def get_color(user_id, database):
+    return database.get_entry("users_info", ['color'], {'request_id': user_id})[0][0]
+
+
+def update_color(color, user_id, database):
+    database.update_entries('users_info', user_id, {'color': color}, update_type='rewrite')
+    return True
+
+
 def isequal(text, pattern):
     import synonyms
     return text.capitalize().strip('.,?!').replace('ё', 'е') in synonyms.synonyms[pattern]

@@ -42,7 +42,8 @@ def init_database(host, user, password, dbname):
                       {'user_id': "serial primary", "request_id": "str NOT NULL UNIQUE",
                        "mode": "str DEFAULT ''", "new": "str DEFAULT 'sample_text'",
                        "last_text": "str DEFAULT ''", "last_speech": "str DEFAULT ''",
-                       "last_buttons": "str DEFAULT ''", "word_set":  "str DEFAULT ''"
+                       "last_buttons": "str DEFAULT ''", "word_set":  "str DEFAULT ''",
+                       "color": "str DEFAULT ''"
                        })
     # psdb.drop_table("users_info")
     return psdb
