@@ -21,7 +21,7 @@ def start(input, id, database):
         if little_fuctions.isequal(input, 'Легкие'):
             mode = '{}>diff>easy'.format(game)
             text, speech, buttons = return_riddle('easy', id, database)
-        elif little_fuctions.isequal(input, 'Нормальные'):
+        elif little_fuctions.isequal(input, 'Средние'):
             mode = '{}>diff>medium'.format(game)
             text, speech, buttons = return_riddle('medium', id, database)
         elif little_fuctions.isequal(input, 'Сложные'):
