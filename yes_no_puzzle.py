@@ -67,4 +67,4 @@ def return_riddle(number):
         buttons = ['Дальше', 'Пропустить 10', 'В начало']
     else:
         buttons=['Дальше', 'Назад', 'Пропустить 10', 'В начало']
-    return text.replace('+', ''), speech, buttons
+    return text, speech, buttons
