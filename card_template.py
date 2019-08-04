@@ -4,7 +4,7 @@ rules = ["965417/00447ee42d0940013267", '1652229/d0e2d4a9e0d0bb2ffda3', '1652229
 start = ['1540737/79627bde770d8f34397c', '1030494/49ec2debd850950e74f0', '1030494/46deb85e9c129f1acb49']
 
 yesno = ["1652229/7c3339e7fe69bdc4f353", '1030494/5992bbd0eabebd28dbfe', '1656841/e51b8ffb620d18a2d34a']
-Inever = ["965417/6217dbc67deb68a944c1"]
+Inever = ["1533899/e8d897265e75f697213c", '213044/7df9c4ca6b05545da558', '1030494/9dbfff6023eb24a8a18f']
 croco = ["1540737/e4f18f914499c70be0d4", '1540737/c6823b8ea52d63ac612d', '1652229/e87e4ec30cbe1aefdc3a']
 helper = ["937455/425ee5f062cb333a36b8", '1540737/c1d96c906443760415b0', '937455/d8dcbc769defad8c1129']
 Ineverwith = ["965417/cbafe44df6130a53c3dc", '1652229/9d98062fbb6a738aaa60', '1652229/6f3f8b2e004dc95a3ff6']
@@ -13,6 +13,8 @@ easy = ["1030494/f17aed3293f46bf1e960", '1540737/b3a5645da0c305f09740', '1656841
 normal = ["965417/c995920af01333ad2b43", '965417/e9cc44576df31ce2064c', '1652229/13733d31b7f1ebc82fe2']
 hard = ["1652229/8b1dfcea37a970a08596", '965417/3d046ed1ed7517e10485', '965417/0f2219da6460bf640bdd']
 unreal = ["1652229/131158d510f8dc34c9a4", '937455/499dc6a73b8538ce57d2', '965417/2d2b928534e5dd0bc08f']
+
+rgb = ['1533899/3d7ed0debb8eddee6af9', '965417/c05fbfb7e810573603fc', '1030494/c0d2d9244f02cf354a11']
 
 
 
@@ -33,7 +35,7 @@ def start_card(color = 0):
                     }
                 },
                 {
-                    "image_id": Inever[0],
+                    "image_id": Inever[color],
                     "title": "Я никогда не",
                     "description": "Игра сближает людей. Узнайте друг о друге много нового.",
                     "button": {
@@ -49,7 +51,7 @@ def start_card(color = 0):
                     }
                 },
                 {
-                    "image_id": helper[color],
+                    "image_id": rgb[color],
                     "title": "Сменить цвета",
                     "description": "Почему бы и нет?",
                     "button": {
