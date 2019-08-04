@@ -42,7 +42,7 @@ def update_mode(user_id, mode, database):
 
 
 def get_set(user_id, database):
-    return database.get_entry("users_info", ['word_set'], {'request_id': user_id})[0][0].split("#$")
+    return set(database.get_entry("users_info", ['word_set'], {'request_id': user_id})[0][0].split("#$"))
 
 
 def update_set(word_set, user_id, database):
