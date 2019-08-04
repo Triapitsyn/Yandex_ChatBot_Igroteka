@@ -44,7 +44,7 @@ def start(input, id, database):
 
 
 def return_start():
-    text = ' '
+    text = 'Начинаем?'
     speech = text
     buttons = ['Легкие', 'Нормальные', 'Сложные', 'Невозможные', 'В начало']
     return text, speech, buttons
