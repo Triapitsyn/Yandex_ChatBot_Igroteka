@@ -37,9 +37,9 @@ def message_return(response, user_storage, text, speech, buttons, mode, user_id,
     database.update_entries('users_info', user_id, {'last_speech': speech}, update_type='rewrite')
     return response, user_storage
 
-def idk_return(response, user_storage, user_id, database, mode):
+def idk_return(response, user_storage, user_id, database, mode, again = 0):
     last_text, last_speech, last_buttons = little_fuctions.get_lasts(user_id, database)
-    if mode == 'AGAIN':
+    if again:
         text = last_text
         speech = last_speech
     else:
@@ -106,7 +106,7 @@ def handle_dialog(request, response, user_storage, database):
         mode = ''
         return message_return(response, user_storage, text, speech, buttons, mode, user_id, database)
     elif little_fuctions.isequal(input, 'Еще раз'):
-        idk_return(response, user_storage, user_id, database, 'AGAIN')
+        idk_return(response, user_storage, user_id, database, mode, 1)
     elif mode.startswith('yesno') or (mode == '' and little_fuctions.isequal(input, 'Данетки')):
         import yes_no_puzzle
         succes = yes_no_puzzle.start(input, user_id, database)
