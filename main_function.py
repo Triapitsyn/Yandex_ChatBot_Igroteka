@@ -40,8 +40,10 @@ def message_return(response, user_storage, text, speech, buttons, mode, user_id,
 def idk_return(response, user_storage, user_id, database, mode, again = 0):
     last_text, last_speech, last_buttons = little_fuctions.get_lasts(user_id, database)
     if again:
-        text = str(last_text) + ' '
-        speech = str(last_speech) + ' '
+        #text = str(last_text) + ' '
+        #speech = str(last_speech) + ' '
+        text = 'Я вас не поняла, давайте попробуем еще раз.\n\n{}'.format(last_text)
+        speech = 'Я вас не поняла, давайте попробуем еще раз.\n\n{}'.format(last_speech)
         print('!!!!!!!!!', 'ТЕКСТ: {}'.format(text), 'СПИЧ: {}'.format(speech), '!!!!!!!!', sep = '\n')
     else:
         text = 'Я вас не поняла, давайте попробуем еще раз.\n\n{}'.format(last_text)
