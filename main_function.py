@@ -7,7 +7,7 @@ def message_return(response, user_storage, text, speech, buttons, mode, user_id,
     little_fuctions.update_mode(user_id, mode, database)
     text = text.replace('+', '')
     response.set_text(text)
-    response.set_tts(speech)
+    response.set_tts(speech + ''*little_fuctions.get_silent(user_id, database))
     user_storage["suggests"] = buttons
     database.update_entries('users_info', user_id, {'last_buttons': '#'.join(buttons)}, update_type='rewrite')
     buttons, user_storage = little_fuctions.get_suggests(user_storage)
@@ -55,7 +55,7 @@ def idk_return(response, user_storage, user_id, database, mode, comment = ''):
     buttons = last_buttons
     text = text.replace('+', '')
     response.set_text(text)
-    response.set_tts(speech)
+    response.set_tts(speech + '' * little_fuctions.get_silent(user_id, database))
     user_storage["suggests"] = buttons
     buttons, user_storage = little_fuctions.get_suggests(user_storage)
     if mode == "":
@@ -145,7 +145,8 @@ def handle_dialog(request, response, user_storage, database):
         buttons = []
         return message_return(response, user_storage, text, speech, buttons, mode, user_id, database)
     elif mode == 'settings' and little_fuctions.isequal(input, 'Тихий режим'):
-        idk_return(response, user_storage, user_id, database, mode, 'Скоро станет доступен!')
+        little_fuctions.update_silent(1 - little_fuctions.get_silent(user_id, database), user_id, database)
+        idk_return(response, user_storage, user_id, database, mode, 'Поняла вас, Сэр!')
     elif (mode == '' and little_fuctions.isequal(input, 'Настройки')) or mode == 'settings':
         mode = 'settings'
         text = 'Ваше указание - честь для меня.'
