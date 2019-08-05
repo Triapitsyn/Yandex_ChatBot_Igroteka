@@ -37,7 +37,7 @@ def message_return(response, user_storage, text, speech, buttons, mode, user_id,
     database.update_entries('users_info', user_id, {'last_speech': speech}, update_type='rewrite')
     return response, user_storage
 
-def idk_return(response, user_storage, user_id, database, mode, again = 0):
+def idk_return(response, user_storage, user_id, database, mode, again):
     last_text, last_speech, last_buttons = little_fuctions.get_lasts(user_id, database)
     if again:
         #text = str(last_text) + ' '
