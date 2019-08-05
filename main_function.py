@@ -146,7 +146,7 @@ def handle_dialog(request, response, user_storage, database):
         return message_return(response, user_storage, text, speech, buttons, mode, user_id, database)
     elif mode == 'settings' and little_fuctions.isequal(input, 'Тихий режим'):
         little_fuctions.update_silent(1 - little_fuctions.get_silent(user_id, database), user_id, database)
-        idk_return(response, user_storage, user_id, database, mode, 'Поняла вас, Сэр!')
+        return idk_return(response, user_storage, user_id, database, mode, 'Поняла вас, Сэр!')
     elif (mode == '' and little_fuctions.isequal(input, 'Настройки')) or mode == 'settings':
         mode = 'settings'
         text = 'Ваше указание - честь для меня.'
