@@ -1,4 +1,4 @@
-colors = 5
+colors = 6
 blocked_colors = {2}
 #0 - sea wawe
 #1 - raspberry
