@@ -5,6 +5,7 @@ blocked_colors = {2}
 #2 - cold raspberry
 #3 - melon
 #4 - blueberry
+#5 - early cocao beans
 
 home = ["1652229/c2193d73b25401b5362a",
         '965417/2838858020e269575ce3',
