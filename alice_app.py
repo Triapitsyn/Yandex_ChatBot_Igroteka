@@ -43,7 +43,7 @@ def init_database(host, user, password, dbname):
                        "mode": "str DEFAULT ''", "new": "str DEFAULT 'sample_text'",
                        "last_text": "str DEFAULT ''", "last_speech": "str DEFAULT ''",
                        "last_buttons": "str DEFAULT ''", "word_set":  "str DEFAULT ''",
-                       "color": "int DEFAULT 0"
+                       "color": "int DEFAULT 0", "silent": "int DEFAULT 0"
                        })
     # psdb.drop_table("users_info")
     return psdb
