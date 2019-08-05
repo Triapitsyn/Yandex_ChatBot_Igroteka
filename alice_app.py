@@ -69,6 +69,9 @@ def main():
     print("!!!")
     print(alice_response)
     print("!!!")
+    print(handle_dialog(
+        alice_request, alice_response, session_storage.get(user_id), database
+    ))
     alice_response, session_storage[user_id] = handle_dialog(
         alice_request, alice_response, session_storage.get(user_id), database
     )
