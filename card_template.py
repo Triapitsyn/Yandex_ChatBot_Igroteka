@@ -125,10 +125,10 @@ def start_card(color = 0):
                 },
                 {
                     "image_id": rgb[color],
-                    "title": "Сменить цвета",
-                    "description": "Почему бы и нет?",
+                    "title": "Настройки",
+                    "description": "Тут можно что-то поменять",
                     "button": {
-                        "payload": {"name": "Сменить цвет!"}
+                        "payload": {"name": "Настройки"}
                     }
                 },
                 {
@@ -293,6 +293,41 @@ def croco_diff_card(color = 0):
                     "description": "Для самых смелых и находчивых.",
                     "button": {
                         "payload": {"name": "Невозможные"}
+                    }
+                },
+                {
+                    "image_id": home[color],
+                    "title": "В начало",
+                    "description": "Вернуться к истокам.",
+                    "button": {
+                        "payload": {"name": "В начало"}
+                    }
+                }
+            ],
+    }
+
+def settings(color = 0):
+    color = color % colors
+    return {
+            "type": "ItemsList",
+            "header": {
+                "text": "Я никогда не",
+            },
+            "items": [
+                {
+                    "image_id": start[color],
+                    "title": "Сменить цвета",
+                    "description": "Почему бы и нет?",
+                    "button": {
+                        "payload": {"name": "Сменить цвета"}
+                    }
+                },
+                {
+                    "image_id": Ineverwith[color],
+                    "title": "Тихий режим",
+                    "description": "Во время игры я не буду слушать ваш голос первые 2 минуты.",
+                    "button": {
+                        "payload": {"name": "Помолчи"}
                     }
                 },
                 {
