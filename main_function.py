@@ -37,17 +37,10 @@ def message_return(response, user_storage, text, speech, buttons, mode, user_id,
     database.update_entries('users_info', user_id, {'last_speech': speech}, update_type='rewrite')
     return response, user_storage
 
-def idk_return(response, user_storage, user_id, database, mode, again):
+def idk_return(response, user_storage, user_id, database, mode):
     last_text, last_speech, last_buttons = little_fuctions.get_lasts(user_id, database)
-    if again:
-        #text = str(last_text) + ' '
-        #speech = str(last_speech) + ' '
-        text = 'Я вас не поняла, давайте попробуем еще раз.\n\n{}'.format(last_text)
-        speech = 'Я вас не поняла, давайте попробуем еще раз.\n\n{}'.format(last_speech)
-        print('!!!!!!!!!', 'ТЕКСТ: {}'.format(text), 'СПИЧ: {}'.format(speech), '!!!!!!!!', sep = '\n')
-    else:
-        text = 'Я вас не поняла, давайте попробуем еще раз.\n\n{}'.format(last_text)
-        speech = 'Я вас не поняла, давайте попробуем еще раз.\n\n{}'.format(last_speech)
+    text = 'Я вас не поняла, давайте попробуем еще раз.\n\n{}'.format(last_text)
+    speech = 'Я вас не поняла, давайте попробуем еще раз.\n\n{}'.format(last_speech)
     buttons = last_buttons
     text = text.replace('+', '')
     response.set_text(text)
@@ -109,28 +102,28 @@ def handle_dialog(request, response, user_storage, database):
         mode = ''
         return message_return(response, user_storage, text, speech, buttons, mode, user_id, database)
     elif little_fuctions.isequal(input, 'Еще раз'):
-        idk_return(response, user_storage, user_id, database, mode, 1)
+        idk_return(response, user_storage, user_id, database, mode)
     elif mode.startswith('yesno') or (mode == '' and little_fuctions.isequal(input, 'Данетки')):
         import yes_no_puzzle
         succes = yes_no_puzzle.start(input, user_id, database)
         if succes:
             return message_return(response, user_storage, *succes, user_id, database)
         else:
-            return idk_return(response, user_storage, user_id, database, mode, 0)
+            return idk_return(response, user_storage, user_id, database, mode)
     elif mode.startswith('Inever') or (mode == '' and little_fuctions.isequal(input, 'Я никогда не')):
         import I_have_never_ever
         succes = I_have_never_ever.start(input, user_id, database)
         if succes:
             return message_return(response, user_storage, *succes, user_id, database)
         else:
-            return idk_return(response, user_storage, user_id, database, mode, 0)
+            return idk_return(response, user_storage, user_id, database, mode)
     elif mode.startswith('croco') or (mode == '' and little_fuctions.isequal(input, 'Крокодил')):
         import croco
         succes = croco.start(input, user_id, database)
         if succes:
             return message_return(response, user_storage, *succes, user_id, database)
         else:
-            return idk_return(response, user_storage, user_id, database, mode, 0)
+            return idk_return(response, user_storage, user_id, database, mode)
     elif mode == '' and little_fuctions.isequal(input, 'Сменить цвета'):
         little_fuctions.update_color(little_fuctions.get_color(user_id, database) + 1, user_id, database)
         if little_fuctions.get_color(user_id, database) % colors == 2:
@@ -148,4 +141,4 @@ def handle_dialog(request, response, user_storage, database):
         little_fuctions.update_set(set(), user_id, database)
         return message_return(response, user_storage, text, speech, buttons, mode, user_id, database)
     else:
-        return idk_return(response, user_storage, user_id, database, mode, 0)
+        return idk_return(response, user_storage, user_id, database, mode)
