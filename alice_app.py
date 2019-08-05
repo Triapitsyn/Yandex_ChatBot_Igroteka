@@ -72,6 +72,7 @@ def main():
     print(handle_dialog(
         alice_request, alice_response, session_storage.get(user_id), database
     ))
+    print(111)
     alice_response, session_storage[user_id] = handle_dialog(
         alice_request, alice_response, session_storage.get(user_id), database
     )
