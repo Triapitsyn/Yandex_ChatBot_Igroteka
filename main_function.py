@@ -75,6 +75,9 @@ def idk_return(response, user_storage, user_id, database, mode, again):
         response.set_card(user_storage["card"])
     else:
         response.set_buttons(buttons)
+    print(11)
+    print(response)
+    print(11)
     return response, user_storage
 
 
