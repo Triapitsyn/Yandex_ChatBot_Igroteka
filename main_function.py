@@ -15,6 +15,10 @@ def message_return(response, user_storage, text, speech, buttons, mode, user_id,
         user_storage["card"] = start_card(little_fuctions.get_color(user_id, database))
         user_storage["card"]["header"]["text"] = text
         response.set_card(user_storage["card"])
+    elif mode == 'settings':
+        user_storage["card"] = settings(little_fuctions.get_color(user_id, database))
+        user_storage["card"]["header"]["text"] = text
+        response.set_card(user_storage["card"])
     elif mode == "yesno>main":
         user_storage["card"] = yesno_card(little_fuctions.get_color(user_id, database))
         user_storage["card"]["header"]["text"] = text
@@ -37,11 +41,14 @@ def message_return(response, user_storage, text, speech, buttons, mode, user_id,
     database.update_entries('users_info', user_id, {'last_speech': speech}, update_type='rewrite')
     return response, user_storage
 
-def idk_return(response, user_storage, user_id, database, mode, again = 0):
+def idk_return(response, user_storage, user_id, database, mode, comment = ''):
     last_text, last_speech, last_buttons = little_fuctions.get_lasts(user_id, database)
-    if again:
+    if comment == 'again':
         text = last_text
         speech = last_speech
+    elif comment:
+        text = comment
+        speech = comment
     else:
         text = 'Я вас не поняла, давайте попробуем еще раз.\n\n{}'.format(last_text)
         speech = 'Я вас не поняла, давайте попробуем еще раз.\n\n{}'.format(last_speech)
@@ -106,7 +113,7 @@ def handle_dialog(request, response, user_storage, database):
         mode = ''
         return message_return(response, user_storage, text, speech, buttons, mode, user_id, database)
     elif little_fuctions.isequal(input, 'Еще раз'):
-        return idk_return(response, user_storage, user_id, database, mode, 1)
+        return idk_return(response, user_storage, user_id, database, mode, 'again')
     elif mode.startswith('yesno') or (mode == '' and little_fuctions.isequal(input, 'Данетки')):
         import yes_no_puzzle
         succes = yes_no_puzzle.start(input, user_id, database)
@@ -128,13 +135,21 @@ def handle_dialog(request, response, user_storage, database):
             return message_return(response, user_storage, *succes, user_id, database)
         else:
             return idk_return(response, user_storage, user_id, database, mode)
-    elif mode == '' and little_fuctions.isequal(input, 'Сменить цвета'):
+    elif mode == 'settings' and little_fuctions.isequal(input, 'Сменить цвета'):
         little_fuctions.update_color(little_fuctions.get_color(user_id, database) + 1, user_id, database)
         if little_fuctions.get_color(user_id, database) % colors in blocked_colors:
             little_fuctions.update_color(little_fuctions.get_color(user_id, database) + 1, user_id, database)
-        text = little_fuctions.hello()
+        text = 'Как вам такой цвет?'
         speech = text
-        mode = ''
+        mode = 'settings'
+        buttons = []
+        return message_return(response, user_storage, text, speech, buttons, mode, user_id, database)
+    elif mode == 'settings' and little_fuctions.isequal(input, 'Тихий режим'):
+        idk_return(response, user_storage, user_id, database, mode, 'Скоро станет доступен!')
+    elif (mode == '' and little_fuctions.isequal(input, 'Настройки')) or mode == 'settings':
+        mode = 'settings'
+        text = 'Ваше указание - честь для меня.'
+        speech = text
         buttons = []
         return message_return(response, user_storage, text, speech, buttons, mode, user_id, database)
     elif mode == '':

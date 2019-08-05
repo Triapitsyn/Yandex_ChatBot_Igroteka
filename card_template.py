@@ -305,3 +305,38 @@ def croco_diff_card(color = 0):
                 }
             ],
     }
+
+def settings(color = 0):
+    color = color % colors
+    return {
+            "type": "ItemsList",
+            "header": {
+                "text": "Я никогда не",
+            },
+            "items": [
+                {
+                    "image_id": start[color],
+                    "title": "Сменить цвета",
+                    "description": "Почему бы и нет?",
+                    "button": {
+                        "payload": {"name": "Сменить цвета"}
+                    }
+                },
+                {
+                    "image_id": Ineverwith[color],
+                    "title": "Тихий режим",
+                    "description": "Во время игры я не буду слушать ваш голос первые 2 минуты.",
+                    "button": {
+                        "payload": {"name": "Помолчи"}
+                    }
+                },
+                {
+                    "image_id": home[color],
+                    "title": "В начало",
+                    "description": "Вернуться к истокам.",
+                    "button": {
+                        "payload": {"name": "В начало"}
+                    }
+                }
+            ],
+    }
