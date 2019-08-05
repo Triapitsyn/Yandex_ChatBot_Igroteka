@@ -59,6 +59,15 @@ def update_color(color, user_id, database):
     return True
 
 
+def get_silent(user_id, database):
+    return database.get_entry("users_info", ['silent'], {'request_id': user_id})[0][0]
+
+
+def update_silent(silent, user_id, database):
+    database.update_entries('users_info', user_id, {'silent': silent}, update_type='rewrite')
+    return True
+
+
 def isequal(text, pattern):
     import synonyms
     return text.capitalize().strip('.,?!').replace('ё', 'е') in synonyms.synonyms[pattern]
