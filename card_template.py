@@ -125,10 +125,10 @@ def start_card(color = 0):
                 },
                 {
                     "image_id": rgb[color],
-                    "title": "Сменить цвета",
-                    "description": "Почему бы и нет?",
+                    "title": "Настройки",
+                    "description": "Тут можно что-то поменять",
                     "button": {
-                        "payload": {"name": "Сменить цвет!"}
+                        "payload": {"name": "Настройки"}
                     }
                 },
                 {
