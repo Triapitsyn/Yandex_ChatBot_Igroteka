@@ -5,6 +5,7 @@ from card_template import *
 
 def message_return(response, user_storage, text, speech, buttons, mode, user_id, database):
     little_fuctions.update_mode(user_id, mode, database)
+    text = text.replace('+', '')
     response.set_text(text)
     response.set_tts(speech)
     user_storage["suggests"] = buttons
@@ -41,6 +42,7 @@ def idk_return(response, user_storage, user_id, database, mode):
     text = 'Я вас не поняла, давайте попробуем еще раз.\n\n{}'.format(last_text)
     speech = 'Я вас не поняла, давайте попробуем еще раз.\n\n{}'.format(last_speech)
     buttons = last_buttons
+    text = text.replace('+', '')
     response.set_text(text)
     response.set_tts(speech)
     user_storage["suggests"] = buttons
