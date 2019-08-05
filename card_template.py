@@ -327,7 +327,7 @@ def settings(color = 0):
                     "title": "Тихий режим",
                     "description": "Во время игры я не буду слушать ваш голос первые 2 минуты.",
                     "button": {
-                        "payload": {"name": "Помолчи"}
+                        "payload": {"name": "Тихий режим"}
                     }
                 },
                 {
