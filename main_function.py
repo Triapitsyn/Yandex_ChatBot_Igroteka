@@ -39,8 +39,12 @@ def message_return(response, user_storage, text, speech, buttons, mode, user_id,
 
 def idk_return(response, user_storage, user_id, database, mode):
     last_text, last_speech, last_buttons = little_fuctions.get_lasts(user_id, database)
-    text = 'Я вас не поняла, давайте попробуем еще раз.\n\n{}'.format(last_text)
-    speech = 'Я вас не поняла, давайте попробуем еще раз.\n\n{}'.format(last_speech)
+    if mode == 'AGAIN':
+        text = last_text
+        speech = last_speech
+    else:
+        text = 'Я вас не поняла, давайте попробуем еще раз.\n\n{}'.format(last_text)
+        speech = 'Я вас не поняла, давайте попробуем еще раз.\n\n{}'.format(last_speech)
     buttons = last_buttons
     text = text.replace('+', '')
     response.set_text(text)
@@ -101,7 +105,8 @@ def handle_dialog(request, response, user_storage, database):
         buttons = games[:]
         mode = ''
         return message_return(response, user_storage, text, speech, buttons, mode, user_id, database)
-
+    elif little_fuctions.isequal(input, 'Еще раз'):
+        idk_return(response, user_storage, user_id, database, 'AGAIN')
     elif mode.startswith('yesno') or (mode == '' and little_fuctions.isequal(input, 'Данетки')):
         import yes_no_puzzle
         succes = yes_no_puzzle.start(input, user_id, database)
