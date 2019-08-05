@@ -114,21 +114,21 @@ def handle_dialog(request, response, user_storage, database):
         if succes:
             return message_return(response, user_storage, *succes, user_id, database)
         else:
-            return idk_return(response, user_storage, user_id, database, mode)
+            return idk_return(response, user_storage, user_id, database, mode, 0)
     elif mode.startswith('Inever') or (mode == '' and little_fuctions.isequal(input, 'Я никогда не')):
         import I_have_never_ever
         succes = I_have_never_ever.start(input, user_id, database)
         if succes:
             return message_return(response, user_storage, *succes, user_id, database)
         else:
-            return idk_return(response, user_storage, user_id, database, mode)
+            return idk_return(response, user_storage, user_id, database, mode, 0)
     elif mode.startswith('croco') or (mode == '' and little_fuctions.isequal(input, 'Крокодил')):
         import croco
         succes = croco.start(input, user_id, database)
         if succes:
             return message_return(response, user_storage, *succes, user_id, database)
         else:
-            return idk_return(response, user_storage, user_id, database, mode)
+            return idk_return(response, user_storage, user_id, database, mode, 0)
     elif mode == '' and little_fuctions.isequal(input, 'Сменить цвета'):
         little_fuctions.update_color(little_fuctions.get_color(user_id, database) + 1, user_id, database)
         if little_fuctions.get_color(user_id, database) % colors == 2:
@@ -146,4 +146,4 @@ def handle_dialog(request, response, user_storage, database):
         little_fuctions.update_set(set(), user_id, database)
         return message_return(response, user_storage, text, speech, buttons, mode, user_id, database)
     else:
-        return idk_return(response, user_storage, user_id, database, mode)
+        return idk_return(response, user_storage, user_id, database, mode, 0)
