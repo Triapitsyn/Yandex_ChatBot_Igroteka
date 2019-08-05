@@ -42,7 +42,7 @@ def idk_return(response, user_storage, user_id, database, mode, again = 0):
     if again:
         text = last_text
         speech = last_speech
-        print('!!!!!!!!!', text, speech, '!!!!!', sep = '\n')
+        print('!!!!!!!!!', 'ТЕКСТ: {}'.format(text), 'СПИЧ: {}'.format(speech), '!!!!!!!!', sep = '\n')
     else:
         text = 'Я вас не поняла, давайте попробуем еще раз.\n\n{}'.format(last_text)
         speech = 'Я вас не поняла, давайте попробуем еще раз.\n\n{}'.format(last_speech)
