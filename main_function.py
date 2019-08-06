@@ -56,7 +56,7 @@ def idk_return(response, user_storage, user_id, database, mode, comment = ''):
     buttons = last_buttons
     text = text.replace('+', '')
     response.set_text(text)
-    response.set_tts(speech + '' * little_fuctions.get_silent(user_id, database))
+    response.set_tts(speech + silence  * little_fuctions.get_silent(user_id, database))
     user_storage["suggests"] = buttons
     buttons, user_storage = little_fuctions.get_suggests(user_storage)
     if mode == "":
