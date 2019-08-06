@@ -25,6 +25,12 @@ start = ['1540737/79627bde770d8f34397c',
          '965417/8b565eb40222d997dcb1',
          '213044/a2d34dc1cc8cd4fc788d',
          '1030494/5dfb6047c8600328335d']
+settings = ['1652229/f9916c5e07044240cef0',
+            '965417/b3b30d6a7e8cb991afc2',
+            '1030494/63ecd41ae3870549c8b9',
+            '1030494/86630089d86144fc43f7',
+            '1652229/85effd59a073b42a8389',
+            '1652229/85effd59a073b42a8389']
 
 yesno = ["1652229/7c3339e7fe69bdc4f353",
          '1030494/5992bbd0eabebd28dbfe',
@@ -124,7 +130,7 @@ def start_card(color = 0):
                     }
                 },
                 {
-                    "image_id": rgb[color],
+                    "image_id": settings[color],
                     "title": "Настройки",
                     "description": "Тут можно что-то поменять",
                     "button": {
@@ -315,7 +321,7 @@ def settings(color = 0):
             },
             "items": [
                 {
-                    "image_id": start[color],
+                    "image_id": rgb[color],
                     "title": "Сменить цвета",
                     "description": "Почему бы и нет?",
                     "button": {
