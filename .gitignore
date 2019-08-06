@@ -117,5 +117,5 @@ dmypy.json
 # Наши добавления
 # .idea от Pycharm
 .DS_Store
-/.idea/
+.idea/
 misc.xml
