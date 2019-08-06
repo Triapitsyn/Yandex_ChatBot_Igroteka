@@ -2,12 +2,13 @@
 from __future__ import unicode_literals
 import little_fuctions
 from card_template import *
+silence = ' <speaker audio="dialogs-upload/a8485d59-e259-4a1d-b7d2-01f329fcc983/ad41fb6a-4909-4bd7-bc5c-1f855aa37209.opus">'
 
 def message_return(response, user_storage, text, speech, buttons, mode, user_id, database):
     little_fuctions.update_mode(user_id, mode, database)
     text = text.replace('+', '')
     response.set_text(text)
-    response.set_tts(speech + ''*little_fuctions.get_silent(user_id, database))
+    response.set_tts(speech + silence*little_fuctions.get_silent(user_id, database))
     user_storage["suggests"] = buttons
     database.update_entries('users_info', user_id, {'last_buttons': '#'.join(buttons)}, update_type='rewrite')
     buttons, user_storage = little_fuctions.get_suggests(user_storage)
