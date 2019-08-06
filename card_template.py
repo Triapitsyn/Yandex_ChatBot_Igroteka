@@ -336,7 +336,7 @@ def settings(color, used_id, database):
                 {
                     "image_id": deaf[color] if little_fuctions.get_silent(used_id, database) != 0 else hear[color],
                     "title": "Тихий режим",
-                    "description":'Я слушаю вас сразу после своей фразы.' if little_fuctions.get_silent(used_id, database) != 0 else 'Я не слушаю вас 2 минуты после своей фразы',
+                    "description":'Сейчас я слушаю вас сразу после своей фразы.' if little_fuctions.get_silent(used_id, database) == 0 else 'Сейчас я не слушаю вас 2 минуты после своей фразы',
                     "button": {
                         "payload": {"name": "Тихий режим"}
                     }
