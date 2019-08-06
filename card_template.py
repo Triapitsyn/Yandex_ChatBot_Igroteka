@@ -148,14 +148,6 @@ def start_card(color):
                     "button": {
                         "payload": {"name": "Настройки"}
                     }
-                },
-                {
-                    "image_id": helper[color],
-                    "title": "Помощь",
-                    "description": "Я помогу тебе разобраться в этом навыке.",
-                    "button": {
-                        "payload": {"name": "Помощь"}
-                    }
                 }
             ],
     }
