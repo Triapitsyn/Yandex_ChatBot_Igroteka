@@ -16,7 +16,7 @@ def message_return(response, user_storage, text, speech, buttons, mode, user_id,
         user_storage["card"]["header"]["text"] = text
         response.set_card(user_storage["card"])
     elif mode == 'settings':
-        user_storage["card"] = settings(little_fuctions.get_color(user_id, database))
+        user_storage["card"] = settings(little_fuctions.get_color(user_id, database), user_id, database)
         user_storage["card"]["header"]["text"] = text
         response.set_card(user_storage["card"])
     elif mode == "yesno>main":
@@ -63,7 +63,7 @@ def idk_return(response, user_storage, user_id, database, mode, comment = ''):
         user_storage["card"]["header"]["text"] = text
         response.set_card(user_storage["card"])
     elif mode == 'settings':
-        user_storage["card"] = settings(little_fuctions.get_color(user_id, database))
+        user_storage["card"] = settings(little_fuctions.get_color(user_id, database), user_id, database)
         user_storage["card"]["header"]["text"] = text
         response.set_card(user_storage["card"])
     elif mode == "yesno>main":

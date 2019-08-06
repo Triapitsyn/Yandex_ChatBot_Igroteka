@@ -25,7 +25,7 @@ start = ['1540737/79627bde770d8f34397c',
          '965417/8b565eb40222d997dcb1',
          '213044/a2d34dc1cc8cd4fc788d',
          '1030494/5dfb6047c8600328335d']
-settings = ['1652229/f9916c5e07044240cef0',
+setting = ['1652229/f9916c5e07044240cef0',
             '965417/b3b30d6a7e8cb991afc2',
             '1030494/63ecd41ae3870549c8b9',
             '1030494/86630089d86144fc43f7',
@@ -94,6 +94,18 @@ rgb = ['1533899/3d7ed0debb8eddee6af9',
        '1652229/8c97688616482919f557',
        '213044/beadc8c30e3ad91c3d8b',
        '1540737/ce82101fe8e5c71cc51c']
+deaf = ['1540737/eeeef065d3a6ff6353a4',
+        '1652229/92a65cd4eb8e9457689a',
+        '965417/ca7af492e169ec6ace9c',
+        '1652229/fd0967cdc9784ab8463f',
+        '213044/89530d145960a1b7baf2',
+        '213044/89530d145960a1b7baf2']
+hear = ['1540737/7dc56af119573dc29c39',
+        '1652229/3f7f4f35d1c9dd07dd4b',
+        '1652229/0a6489a628b36716922e',
+        '965417/b7501ee2a43b1d37530c',
+        '1540737/c53b87a63881119177a5',
+        '1540737/c53b87a63881119177a5']
 
 
 
@@ -130,7 +142,7 @@ def start_card(color = 0):
                     }
                 },
                 {
-                    "image_id": settings[color],
+                    "image_id": setting[color],
                     "title": "Настройки",
                     "description": "Тут можно что-то поменять",
                     "button": {
@@ -312,7 +324,8 @@ def croco_diff_card(color = 0):
             ],
     }
 
-def settings(color = 0):
+def settings(color = 0, used_id, database):
+    import little_fuctions
     color = color % colors
     return {
             "type": "ItemsList",
@@ -329,9 +342,9 @@ def settings(color = 0):
                     }
                 },
                 {
-                    "image_id": Ineverwith[color],
+                    "image_id": deaf[color] if little_fuctions.get_set(used_id, database) == 0 else hear[color],
                     "title": "Тихий режим",
-                    "description": "Во время игры я не буду слушать ваш голос первые 2 минуты.",
+                    "description": "Во время игры я{} буду слушать ваш голос первые 2 минуты.".format(' не' if little_fuctions.get_set(used_id, database) == 0 else ''),
                     "button": {
                         "payload": {"name": "Тихий режим"}
                     }
