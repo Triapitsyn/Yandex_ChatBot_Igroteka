@@ -109,7 +109,7 @@ hear = ['1540737/7dc56af119573dc29c39',
 
 
 
-def start_card(color = 0):
+def start_card(color):
     color = color % colors
     return {
             "type": "ItemsList",
@@ -160,7 +160,7 @@ def start_card(color = 0):
             ],
     }
 
-def inever_card(color = 0):
+def inever_card(color):
     color = color % colors
     return {
             "type": "ItemsList",
@@ -203,7 +203,7 @@ def inever_card(color = 0):
             ],
     }
 
-def croco_card(color = 0):
+def croco_card(color):
     color = color % colors
     return {
             "type": "ItemsList",
@@ -238,7 +238,7 @@ def croco_card(color = 0):
             ],
     }
 
-def yesno_card(color = 0):
+def yesno_card(color):
     color = color % colors
     return {
             "type": "ItemsList",
@@ -273,7 +273,7 @@ def yesno_card(color = 0):
             ],
     }
 
-def croco_diff_card(color = 0):
+def croco_diff_card(color):
     color = color % colors
     return {
             "type": "ItemsList",
@@ -324,7 +324,7 @@ def croco_diff_card(color = 0):
             ],
     }
 
-def settings(color = 0, used_id, database):
+def settings(color, used_id, database):
     import little_fuctions
     color = color % colors
     return {
