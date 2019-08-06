@@ -98,8 +98,12 @@ def handle_dialog(request, response, user_storage, database):
     user_id = request.user_id
     is_first_time = request.is_new_session
     if is_first_time:
+        text = 'Вас приветствует Игротека - спутник дружеских компаний. Надеюсь, мы с вами поладим. ' \
+               'Выберите игру, и мы начнем.'
+        speech = text
         mode = ''
-        little_fuctions.update_mode(user_id, mode, database)
+        buttons = []
+        return message_return(response, user_storage, text, speech, buttons, mode, user_id, database)
     else:
         mode = little_fuctions.get_mode(user_id, database)
 
