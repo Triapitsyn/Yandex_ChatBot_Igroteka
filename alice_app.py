@@ -98,5 +98,31 @@ def mainnn():
     return alice_response.dumps()
 
 
+@app.route("/zavalinka/", methods=['POST'])
+def zavalinka():
+    from other2 import database_module
+    from other2 import zavalinka
+    import pymorphy2
+    from other2.alice_sdk import AliceRequest, AliceResponse
+    morph = pymorphy2.MorphAnalyzer()
+    database = database_module.DatabaseManager()
+    # Функция получает тело запроса и возвращает ответ.
+    alice_request = AliceRequest(request.json)
+    logging.info('Request: {}'.format(alice_request))
+
+    alice_response = AliceResponse(alice_request)
+
+    user_id = alice_request.user_id
+    print(user_id)
+    print(session_storage.get(user_id))
+    print(len(session_storage))
+    alice_response, session_storage[user_id] = zavalinka.handle_dialog(
+        alice_request, alice_response, session_storage.get(user_id), database, morph.parse('очко')[0]
+    )
+
+    logging.info('Response: {}'.format(alice_response))
+
+    return alice_response.dumps()
+
 if __name__ == '__main__':
     app.run()
