@@ -162,6 +162,13 @@ def handle_dialog(request, response, user_storage, database):
         speech = text
         buttons = []
         return message_return(response, user_storage, text, speech, buttons, mode, user_id, database)
+    elif mode == '' and little_fuctions.isequal(input, 'Другая игра'):
+        import other_games, random
+        mode = ''
+        text = random.choice(other_games.data)
+        speech = text
+        buttons = []
+        return message_return(response, user_storage, text, speech, buttons, mode, user_id, database)
     elif mode == '':
         text = little_fuctions.hello()
         speech = text

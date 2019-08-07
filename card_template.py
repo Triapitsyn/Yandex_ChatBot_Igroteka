@@ -143,6 +143,14 @@ def start_card(color):
                 },
                 {
                     "image_id": setting[color],
+                    "title": "Во что еще поиграть?",
+                    "description": "Я подскажу тебе какую-нибудь игру",
+                    "button": {
+                        "payload": {"name": "Другая игра"}
+                    }
+                },
+                {
+                    "image_id": setting[color],
                     "title": "Настройки",
                     "description": "Тут можно что-то поменять",
                     "button": {
