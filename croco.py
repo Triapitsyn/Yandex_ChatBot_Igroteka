@@ -7,6 +7,8 @@ def start(input, id, database):
         mode = '{}>main'.format(game)
     elif mode == '{}>main'.format(game) and little_fuctions.isequal(input, 'Правила'):
         text, speech, buttons = return_rules()
+        text += '' + '\n\nНе забывайте нажимать на синюю кнопку, чтобы я не мешала вам разгадывать данетку.' * (1 - little_fuctions.get_silent(id, database))
+        speech += '' + '\n\nНе забывайте нажимать на синюю кнопку, чтобы я не мешала вам разгадывать данетку.' * (1 - little_fuctions.get_silent(id, database))
         mode = '{}>rules'.format(game)
     elif mode.startswith('{}>main'.format(game)) and little_fuctions.isequal(input, 'Начать'):
         text, speech, buttons = return_difficulties()
@@ -60,8 +62,7 @@ def return_rules():
     text='Ваша задача - без слов и указаний на реальные предметы объяснить твоим друзьям значение сл+ова, которое я тебе покажу. ' \
          'Кто из них отгадает - тот и объясняет следующее слово.\n\n' \
          'Например, вы можете указать на запястье, и все поймут, что вы показываете часы, ' \
-         'но вы не можете показать на настенные часы.\n\n' \
-         'Не забывайте нажимать на синюю кнопку, чтобы я не мешала вам играть.'
+         'но вы не можете показать на настенные часы.'
     speech=text
     buttons=['Начать', 'В начало']
     return text, speech, buttons
