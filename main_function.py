@@ -7,6 +7,8 @@ silence = ' <speaker audio="dialogs-upload/a8485d59-e259-4a1d-b7d2-01f329fcc983/
 def message_return(response, user_storage, text, speech, buttons, mode, user_id, database):
     little_fuctions.update_mode(user_id, mode, database)
     text = text.replace('+', '')
+    if not (text.endswith('.') or text.endswith('!') or text.endswith('?')):
+        text += '.'
     response.set_text(text)
     response.set_tts(speech + silence*little_fuctions.get_silent(user_id, database))
     user_storage["suggests"] = buttons
@@ -148,7 +150,7 @@ def handle_dialog(request, response, user_storage, database):
         little_fuctions.update_color(little_fuctions.get_color(user_id, database) + 1, user_id, database)
         if little_fuctions.get_color(user_id, database) % colors in blocked_colors:
             little_fuctions.update_color(little_fuctions.get_color(user_id, database) + 1, user_id, database)
-        text = 'Как вам такой цвет?'
+        text = little_fuctions.go_color()
         speech = text
         mode = 'settings'
         buttons = []
@@ -158,14 +160,20 @@ def handle_dialog(request, response, user_storage, database):
         return idk_return(response, user_storage, user_id, database, mode, 'Поняла вас, Сэр!')
     elif (mode == '' and little_fuctions.isequal(input, 'Настройки')) or mode == 'settings':
         mode = 'settings'
-        text = 'Ваше указание - честь для меня.'
+        text = little_fuctions.go_settings()
         speech = text
         buttons = []
         return message_return(response, user_storage, text, speech, buttons, mode, user_id, database)
     elif mode == '' and little_fuctions.isequal(input, 'Другая игра'):
         import other_games, random
         mode = ''
-        text = random.choice(other_games.data)
+        used = little_fuctions.get_set(user_id, database)
+        if len(used) == len(other_games.data):
+            used = set()
+        mediator = set(other_games.data).difference(used)
+        text = random.choice(mediator)
+        used.add(text)
+        little_fuctions.update_set(used, user_id, database)
         speech = text
         buttons = []
         return message_return(response, user_storage, text, speech, buttons, mode, user_id, database)
