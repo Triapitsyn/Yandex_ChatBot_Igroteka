@@ -167,11 +167,12 @@ def start_card(color):
     }
 
 def inever_card(color):
+    import little_fuctions
     color = color % colors
     return {
             "type": "ItemsList",
             "header": {
-                "text": "Я никогда не",
+                "text": little_fuctions.ready(),
             },
             "items": [
                 {
@@ -210,11 +211,12 @@ def inever_card(color):
     }
 
 def croco_card(color):
+    import little_fuctions
     color = color % colors
     return {
             "type": "ItemsList",
             "header": {
-                "text": "Крокодил",
+                "text": little_fuctions.ready(),
             },
             "items": [
                 {
@@ -245,11 +247,12 @@ def croco_card(color):
     }
 
 def yesno_card(color):
+    import little_fuctions
     color = color % colors
     return {
             "type": "ItemsList",
             "header": {
-                "text": "Данетки",
+                "text": little_fuctions.ready(),
             },
             "items": [
                 {
@@ -336,7 +339,7 @@ def settings(color, used_id, database):
     return {
             "type": "ItemsList",
             "header": {
-                "text": "Я никогда не",
+                "text": "Настройки",
             },
             "items": [
                 {
