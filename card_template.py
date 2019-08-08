@@ -25,6 +25,12 @@ start = ['1540737/79627bde770d8f34397c',
          '965417/8b565eb40222d997dcb1',
          '213044/a2d34dc1cc8cd4fc788d',
          '1030494/5dfb6047c8600328335d']
+other = ['1540737/a22fdfd5cee4d29f185f',
+         '1652229/755d43142dd6542ce617',
+         '1652229/317dab424a3d25c1ffed',
+         '1652229/bfa9d4ffb7276aba1481',
+         '1540737/a5eb4a8a4777648edd71',
+         '1540737/a5eb4a8a4777648edd71']
 setting = ['1652229/f9916c5e07044240cef0',
            '1030494/63ecd41ae3870549c8b9',
            '965417/b3b30d6a7e8cb991afc2',
@@ -142,7 +148,7 @@ def start_card(color):
                     }
                 },
                 {
-                    "image_id": setting[color],
+                    "image_id": other[color],
                     "title": "Во что еще поиграть?",
                     "description": "Я подскажу тебе какую-нибудь игру",
                     "button": {
