@@ -8,7 +8,7 @@ def start(input, id, database):
     elif mode == '{}>main'.format(game) and little_fuctions.isequal(input, 'Правила'):
         text, speech, buttons = return_rules()
         text += '' + '\n\nНе забывайте нажимать на синюю кнопку, чтобы я не мешала вам разгадывать данетку.' * (1 - little_fuctions.get_silent(id, database))
-        speech += '' + '\n\nНе забывайте нажимать на синюю кнопку, чтобы я не мешала вам разгадывать данетку.' * (1 - little_fuctions.get_silent(id, database))
+        speech += '' + '\n\n - - - Не забывайте нажимать на синюю кнопку, чтобы я не мешала вам разгадывать данетку.' * (1 - little_fuctions.get_silent(id, database))
         mode = '{}>rules'.format(game)
     elif (mode == '{}>rules'.format(game) or mode == '{}>main'.format(game)) and little_fuctions.isequal(input, 'Начать'):
         text, speech, buttons = return_riddle(0, id, database)

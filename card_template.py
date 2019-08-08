@@ -336,6 +336,7 @@ def croco_diff_card(color):
 def settings(color, used_id, database):
     import little_fuctions
     color = color % colors
+    silent_on = little_fuctions.get_silent(used_id, database) != 0
     return {
             "type": "ItemsList",
             "header": {
@@ -351,9 +352,9 @@ def settings(color, used_id, database):
                     }
                 },
                 {
-                    "image_id": deaf[color] if little_fuctions.get_silent(used_id, database) != 0 else hear[color],
-                    "title": "Тихий режим" + '[ON]' if little_fuctions.get_silent(used_id, database) != 0 else ['OFF'],
-                    "description": 'Сейчас я не слушаю вас 2 минуты после своей фразы' if little_fuctions.get_silent(used_id, database) != 0 else 'Сейчас я слушаю вас сразу после своей фразы.',
+                    "image_id": deaf[color] if silent_on else hear[color],
+                    "title": "Тихий режим" + '[ON]' if silent_on else ['OFF'],
+                    "description": 'Сейчас я не слушаю вас 2 минуты после своей фразы' if silent_on else 'Сейчас я слушаю вас сразу после своей фразы.',
                     "button": {
                         "payload": {"name": "Тихий режим"}
                     }
