@@ -1,5 +1,6 @@
 colors = 6
 blocked_colors = {2}
+default_color = 4
 #0 - sea wawe
 #1 - raspberry
 #2 - cold raspberry
@@ -116,7 +117,7 @@ hear = ['1540737/7dc56af119573dc29c39',
 
 
 def start_card(color):
-    color = color % colors
+    color = (color + default_color) % colors
     return {
             "type": "ItemsList",
             "header": {
@@ -168,7 +169,7 @@ def start_card(color):
 
 def inever_card(color):
     import little_fuctions
-    color = color % colors
+    color = (color + default_color) % colors
     return {
             "type": "ItemsList",
             "header": {
@@ -212,7 +213,7 @@ def inever_card(color):
 
 def croco_card(color):
     import little_fuctions
-    color = color % colors
+    color = (color + default_color) % colors
     return {
             "type": "ItemsList",
             "header": {
@@ -248,7 +249,7 @@ def croco_card(color):
 
 def yesno_card(color):
     import little_fuctions
-    color = color % colors
+    color = (color + default_color) % colors
     return {
             "type": "ItemsList",
             "header": {
@@ -283,7 +284,7 @@ def yesno_card(color):
     }
 
 def croco_diff_card(color):
-    color = color % colors
+    color = (color + default_color) % colors
     return {
             "type": "ItemsList",
             "header": {
@@ -335,7 +336,7 @@ def croco_diff_card(color):
 
 def settings(color, used_id, database):
     import little_fuctions
-    color = color % colors
+    color = (color + default_color) % colors
     silent_on = little_fuctions.get_silent(used_id, database) != 0
     return {
             "type": "ItemsList",

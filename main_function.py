@@ -102,7 +102,7 @@ def handle_dialog(request, response, user_storage, database):
     is_first_time = request.is_new_session
     if is_first_time:
         text = 'Вас приветствует Игротека - спутник дружеских компаний. Надеюсь, мы с вами поладим. ' \
-               'Выберите игру, и мы начнем.'
+               'Выберите игру - и мы начнем.'
         speech = text
         mode = ''
         buttons = []
