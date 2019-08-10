@@ -171,7 +171,7 @@ def handle_dialog(request, response, user_storage, database):
         if len(used) == len(other_games.data):
             used = set()
         mediator = set(other_games.data).difference(used)
-        text = random.choice(mediator)
+        text = random.choice(list(mediator))
         used.add(text)
         little_fuctions.update_set(used, user_id, database)
         speech = text
