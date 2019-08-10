@@ -354,7 +354,7 @@ def settings(color, used_id, database):
                 },
                 {
                     "image_id": deaf[color] if silent_on else hear[color],
-                    "title": "Тихий режим" + '[ON]' if silent_on else ['OFF'],
+                    "title": 'Тихий режим', #+ ('[ON]' if silent_on else ['OFF']),
                     "description": 'Сейчас я не слушаю вас 2 минуты после своей фразы' if silent_on else 'Сейчас я слушаю вас сразу после своей фразы.',
                     "button": {
                         "payload": {"name": "Тихий режим"}
