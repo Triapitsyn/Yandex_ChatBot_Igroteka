@@ -337,7 +337,7 @@ def croco_diff_card(color):
 def settings(color, used_id, database):
     import little_fuctions
     color = (color + default_color) % colors
-    silent_on = little_fuctions.get_silent(used_id, database) != 0
+    silent_on = (little_fuctions.get_silent(used_id, database) != 0)
     return {
             "type": "ItemsList",
             "header": {
