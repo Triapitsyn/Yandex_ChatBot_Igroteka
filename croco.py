@@ -79,6 +79,6 @@ def return_riddle(difficulty, id, database):
     text=random.choice(list(mediator))
     used.add(text)
     little_fuctions.update_set(used, id, database)
-    speech=random.choice(croco_biblio.phrase[difficulty]) if random.randint(1, 3) < 2 else ' '
+    speech=random.choice(croco_biblio.phrase[difficulty]) if random.randint(0, 5) < 4 else ' '
     buttons=['Дальше', 'Поменять сложность', 'В начало']
     return text, speech, buttons
