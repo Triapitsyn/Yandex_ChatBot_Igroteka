@@ -362,6 +362,15 @@ def settings(color, used_id, database):
                 },
                 {
                     "image_id": home[color],
+                    "title": "Оценить",
+                    "description": "Поставить оценку нашему чудесному навыку",
+                    "button": {
+                        "url": "https://dialogs.yandex.ru/store/skills/96b7421d-igroteka-uyut-i-vesel-e-dlya-druz",
+                        "payload": {"name": "url"}
+                    }
+                },
+                {
+                    "image_id": home[color],
                     "title": "В начало",
                     "description": "Вернуться к истокам.",
                     "button": {
