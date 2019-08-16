@@ -167,9 +167,9 @@ def start_card(color):
                 {
                     "image_id": setting[color],
                     "title": "Настройки",
-                    "description": random.choice["Тут можно что-то поменять",
+                    "description": random.choice(["Тут можно что-то поменять",
                                                  "Здесь может быть что-то интересное",
-                                                 "Тут интересно"],
+                                                 "Тут интересно"]),
                     "button": {
                         "payload": {"name": "Настройки"}
                     }
