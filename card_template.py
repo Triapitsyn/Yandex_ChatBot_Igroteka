@@ -39,6 +39,7 @@ setting = ['1652229/f9916c5e07044240cef0',
            '1652229/85effd59a073b42a8389',
            '213044/ea3fc90e0db07dc008fa']
 
+
 yesno = ["1652229/7c3339e7fe69bdc4f353",
          '1030494/5992bbd0eabebd28dbfe',
          '1656841/e51b8ffb620d18a2d34a',
@@ -113,6 +114,12 @@ hear = ['1540737/7dc56af119573dc29c39',
         '965417/b7501ee2a43b1d37530c',
         '1540737/c53b87a63881119177a5',
         '1540737/b7d2f3a9c3417f33de8f']
+rate = ['965417/375c0b817fb28131c870',
+        '1030494/10c1c5bb6cb297c99df5',
+        '1652229/a8774ef90fd2d023d835',
+        '965417/dad7d29bed17e5928bd4',
+        '965417/aca8e5efcc245d0e4d40',
+        '965417/b74c4b4c20c1f192da2f']
 
 
 
@@ -361,7 +368,7 @@ def settings(color, used_id, database):
                     }
                 },
                 {
-                    "image_id": home[color],
+                    "image_id": rate[color],
                     "title": "Оценить",
                     "description": "Поставить оценку нашему чудесному навыку",
                     "button": {
