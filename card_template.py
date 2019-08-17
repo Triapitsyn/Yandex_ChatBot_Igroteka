@@ -268,31 +268,31 @@ def yesno_card(color, user_id, database):
     color = (color + default_color) % colors
     is_first_time = (little_fuctions.get_last_riddle(user_id, database) == 0)
     if is_first_time:
-        starting = {
+        starting = [{
                         "image_id": start[color],
                         "title": "Начать",
                         "description": 'Не забудь уточнить правила. Приятной игры!',
                         "button": {
                             "payload": {"name": "Начать заново"}
                         }
-                    }
+                    }]
     else:
-        starting = {
+        starting = [{
                         "image_id": start[color],
                         "title": "Начать заново",
                         "description": 'Не забудь уточнить правила. Приятной игры!',
                         "button": {
                             "payload": {"name": "Начать заново"}
                         }
-                    }, \
+                    },
                     {
                         "image_id": cont[color],
                         "title": "Продолжить",
-                        "description": 'Мы начнем там, где вы остановились в прошлый раз.',
+                        "description": 'Мы начнем там, где остановились в прошлый раз.',
                         "button": {
                             "payload": {"name": "Продолжить"}
                         }
-                    }
+                    }]
     return {
             "type": "ItemsList",
             "header": {
