@@ -53,8 +53,8 @@ def idk_return(response, user_storage, user_id, database, mode, comment = ''):
         text = comment
         speech = comment
     else:
-        text = 'Я вас не поняла, давайте попробуем еще раз.\n\n{}'.format(last_text)
-        speech = 'Я вас не поняла, давайте попробуем еще раз.\n\n{}'.format(last_speech)
+        text = little_fuctions.idk() + '\n\n{}'.format(last_text)
+        speech = little_fuctions.idk() + '\n\n{}'.format(last_speech)
     buttons = last_buttons
     text = text.replace('+', '')
     response.set_text(text)

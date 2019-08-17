@@ -78,6 +78,12 @@ def get_lasts(user_id, database):
             database.get_entry("users_info", ['last_speech'], {'request_id': user_id})[0][0],\
             database.get_entry("users_info", ['last_buttons'], {'request_id': user_id})[0][0].split('#')
 
+def get_last_riddle(user_id, database):
+    return 0
+
+def update_last_riddle(riddle, user_id, database):
+    return 0
+
 def hello():
     import random
     return random.choice(['Выбери игру.',
@@ -113,3 +119,10 @@ def go_color():
                           'Довольно милый цвет.',
                           'Я бы сменила цвет+а еще раз.',
                           'Этот цвет мне точно нравится!'])
+
+def idk():
+    import random
+    return random.choice(['Я вас не поняла, давайте попробуем еще раз.',
+                          'Я не настолько умная как человеки, поэтому ответьте крайне линейно',
+                          'Простите, я вас не поняла. Что вы сказали?',
+                          'Я не знаю, что это значит. Попробуйте ответить еще раз.'])
