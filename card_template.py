@@ -266,7 +266,7 @@ def croco_card(color):
 def yesno_card(color, user_id, database):
     import little_fuctions
     color = (color + default_color) % colors
-    is_first_time = little_fuctions.get_last_riddle(user_id, database) == 0
+    is_first_time = (little_fuctions.get_last_riddle(user_id, database) == 0)
     if is_first_time:
         starting = {
                         "image_id": start[color],
