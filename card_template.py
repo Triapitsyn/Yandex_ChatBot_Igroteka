@@ -288,7 +288,7 @@ def yesno_card(color, user_id, database):
                     {
                         "image_id": cont[color],
                         "title": "Продолжить",
-                        "description": 'Мы начнем там, где вы остановились в прошлый раз.',
+                        "description": 'Мы начнем там, где остановились в прошлый раз.',
                         "button": {
                             "payload": {"name": "Продолжить"}
                         }
