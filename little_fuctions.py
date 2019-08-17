@@ -78,6 +78,12 @@ def get_lasts(user_id, database):
             database.get_entry("users_info", ['last_speech'], {'request_id': user_id})[0][0],\
             database.get_entry("users_info", ['last_buttons'], {'request_id': user_id})[0][0].split('#')
 
+def get_last_riddle(user_id, database):
+    return 0
+
+def update_last_riddle(riddle, user_id, database):
+    return 0
+
 def hello():
     import random
     return random.choice(['Выбери игру.',
