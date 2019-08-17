@@ -26,6 +26,12 @@ start = ['1540737/79627bde770d8f34397c',
          '965417/8b565eb40222d997dcb1',
          '213044/a2d34dc1cc8cd4fc788d',
          '1030494/5dfb6047c8600328335d']
+cont = ['965417/9ff77a1edcfd7be8382f',
+        '937455/a1f75ed8c62a420c4fe0',
+        '997614/61aaa1e2be3357a31db6',
+        '1030494/e823d45659d0f9eb4c77',
+        '965417/6f358af0a5bdeec91b4d',
+        '965417/6f358af0a5bdeec91b4d']
 other = ['1540737/a22fdfd5cee4d29f185f',
          '1652229/755d43142dd6542ce617',
          '1652229/317dab424a3d25c1ffed',
@@ -275,7 +281,7 @@ def yesno_card(color):
                     }
                 },
                 {
-                    "image_id": start[color],
+                    "image_id": cont[color],
                     "title": "Продолжить",
                     "description": 'Мы начнем там, где вы остановились в прошлый раз.',
                     "button": {
