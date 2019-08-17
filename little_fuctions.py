@@ -79,10 +79,11 @@ def get_lasts(user_id, database):
             database.get_entry("users_info", ['last_buttons'], {'request_id': user_id})[0][0].split('#')
 
 def get_last_riddle(user_id, database):
-    return 0
+    return database.get_entry("users_info", ['last_riddle'], {'request_id': user_id})[0][0]
 
-def update_last_riddle(riddle, user_id, database):
-    return 0
+def update_last_riddle(last_riddle, user_id, database):
+    database.update_entries('users_info', user_id, {'last_riddle': last_riddle}, update_type='rewrite')
+    return True
 
 def hello():
     import random
