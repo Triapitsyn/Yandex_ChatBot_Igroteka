@@ -1,8 +1,4 @@
-# Невероятно секретный проект
-Страшно даже смотреть в код. Не советуем.
+Hi!
 
-Terrible, cut down!
-
-`А вот тут можно вставочки кода делать, 
-хотя и написано, что это заголовок.
-Зато было бы красиво.`
+Here you can see code I and my friend wrote for Yandex's Alice chatbot. 
+Eventually, we won a first prize in chatbot's competition.
