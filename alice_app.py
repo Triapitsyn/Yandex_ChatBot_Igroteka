@@ -25,7 +25,6 @@ session_storage = {}
 
 logging.basicConfig(level=logging.DEBUG)
 
-
 def init_database(host, user, password, dbname):
     psdb = postgresql_database.DatabaseManager(host, user, password, dbname)
     psdb.create_table("users_info",

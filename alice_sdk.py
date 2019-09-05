@@ -74,4 +74,3 @@ class AliceResponse(object):
 
     def __str__(self):
         return self.dumps()
-
