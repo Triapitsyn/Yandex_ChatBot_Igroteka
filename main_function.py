@@ -186,3 +186,4 @@ def handle_dialog(request, response, user_storage, database):
         return message_return(response, user_storage, text, speech, buttons, mode, user_id, database)
     else:
         return idk_return(response, user_storage, user_id, database, mode)
+

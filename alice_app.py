@@ -22,21 +22,11 @@ app = Flask(__name__)
 # Хранилище данных о сессиях.
 session_storage = {}
 
+
 logging.basicConfig(level=logging.DEBUG)
 
 
 def init_database(host, user, password, dbname):
-    """
-    =================================================================
-    Значения по умолчанию подавать по следующему шаблону:
-    'column_name': "type DEFAULT value", где value в зависомости от
-    типа ДОЛЖНО принимать следующие значения:
-    INTEGER -> 0; REAL -> 0.00; TEXT -> 'text here'; BOOLEAN -> True;
-    list -> '[entry1#&% запись2 #&% "3"]' - ТОЛЬКО ТАК на вход
-    И угадывайте как хотите, лист чего нам пришёл, туплей или нет,
-    тех или не тех. УДОБНО, ДА? Как просили, так и сделали.
-    =================================================================
-    """
     psdb = postgresql_database.DatabaseManager(host, user, password, dbname)
     psdb.create_table("users_info",
                       {'user_id': "serial primary", "request_id": "str NOT NULL UNIQUE",
