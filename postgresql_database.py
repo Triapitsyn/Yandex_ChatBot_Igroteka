@@ -42,7 +42,6 @@ class DatabaseManager:
         :param str_for_check: строка для проверки на SQL-синтаксис
         :return: строку, если всё хорошо; предупреждение, если плохо
         ================================================================================
-        !!! будет сделано в ближайшее никогда !!!
         """
         some_code = 'some_code' + str_for_check
         return some_code
@@ -149,14 +148,6 @@ class DatabaseManager:
         else:
             return string[:]
 
-
-        # result_list = []
-        # for item in string.split(', '):  # если есть хотя бы 1 буква, то строка не число, но может быть bool
-        #     if item != 'True' and item != 'False':
-        #         result_list.append(braces_type + item + braces_type)
-        #     else:  # в случае если не нужно обрамлять, оставляем как есть
-        #         result_list.append(item)
-        # return (', '.join(result_list) if len(result_list) > 1 else result_list[0]).replace("\\", "")
 
     @staticmethod
     def check_for_hidden_list_sequence(input_obj, sequence='#&%') -> bool:

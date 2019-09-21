@@ -4,6 +4,7 @@ import little_fuctions
 from card_template import *
 silence = ' <speaker audio="dialogs-upload/a8485d59-e259-4a1d-b7d2-01f329fcc983/ad41fb6a-4909-4bd7-bc5c-1f855aa37209.opus">'
 
+
 def message_return(response, user_storage, text, speech, buttons, mode, user_id, database):
     little_fuctions.update_mode(user_id, mode, database)
     text = text.replace('+', '')
@@ -43,6 +44,7 @@ def message_return(response, user_storage, text, speech, buttons, mode, user_id,
     database.update_entries('users_info', user_id, {'last_text': text}, update_type='rewrite')
     database.update_entries('users_info', user_id, {'last_speech': speech}, update_type='rewrite')
     return response, user_storage
+
 
 def idk_return(response, user_storage, user_id, database, mode, comment = ''):
     last_text, last_speech, last_buttons = little_fuctions.get_lasts(user_id, database)

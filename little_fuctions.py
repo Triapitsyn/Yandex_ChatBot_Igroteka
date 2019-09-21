@@ -81,9 +81,11 @@ def get_lasts(user_id, database):
 def get_last_riddle(user_id, database):
     return database.get_entry("users_info", ['last_riddle'], {'request_id': user_id})[0][0]
 
+
 def update_last_riddle(last_riddle, user_id, database):
     database.update_entries('users_info', user_id, {'last_riddle': last_riddle}, update_type='rewrite')
     return True
+
 
 def hello():
     import random
@@ -93,6 +95,8 @@ def hello():
                           'Какая игра вам нравится?',
                           'Прочитайте описания и выберите, во что хотите играть.',
                           'Мне нравятся Крокодил, очень рекомендую.'])
+
+
 def ready():
     import random
     return random.choice(['Только скажите "начать".',
@@ -104,6 +108,7 @@ def ready():
                           'Я тоже люблю эту игру',
                           'А у вас хороший вкус в играх.'])
 
+
 def go_settings():
     import random
     return random.choice(['Ваше указание - честь для меня.',
@@ -113,6 +118,7 @@ def go_settings():
                           'Я готова измениться для тебя.',
                           'Ваше желание будет исполнено.'])
 
+
 def go_color():
     import random
     return random.choice(['Как вам такой цвет?',
@@ -120,6 +126,7 @@ def go_color():
                           'Довольно милый цвет.',
                           'Я бы сменила цвет+а еще раз.',
                           'Этот цвет мне точно нравится!'])
+
 
 def idk():
     import random

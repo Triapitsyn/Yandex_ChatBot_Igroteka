@@ -7,13 +7,16 @@ def start(input, id, database):
         mode = '{}>main'.format(game)
     elif mode == '{}>main'.format(game) and little_fuctions.isequal(input, 'Правила'):
         text, speech, buttons = return_rules()
-        text += '' + '\n\nНе забывайте нажимать на синюю кнопку, чтобы я не мешала вам разгадывать данетку.' * (1 - little_fuctions.get_silent(id, database))
-        speech += '' + '\n\n - - - Не забывайте нажимать на синюю кнопку, чтобы я не мешала вам разгадывать данетку.' * (1 - little_fuctions.get_silent(id, database))
+        silent = (1 - little_fuctions.get_silent(id, database))
+        text += '' + '\n\nНе забывайте нажимать на синюю кнопку, чтобы я не мешала вам.' * silent
+        speech += '' + '\n\n - - - Не забывайте нажимать на синюю кнопку, чтобы я не мешала вам.' * silent
         mode = '{}>rules'.format(game)
-    elif (mode == '{}>rules'.format(game) or mode == '{}>main'.format(game)) and little_fuctions.isequal(input, 'Начать'):
+    elif (mode == '{}>rules'.format(game) or mode == '{}>main'.format(game)) \
+            and little_fuctions.isequal(input, 'Начать'):
         text, speech, buttons = return_riddle(0, id, database)
         mode = '{}>riddle>1>0'.format(game)
-    elif (mode == '{}>rules'.format(game) or mode == '{}>main'.format(game)) and little_fuctions.isequal(input, 'Играть с разработчиком'):
+    elif (mode == '{}>rules'.format(game) or mode == '{}>main'.format(game)) \
+            and little_fuctions.isequal(input, 'Играть с разработчиком'):
         text, speech, buttons = return_riddle(1, id, database)
         mode = '{}>riddle>1>1'.format(game)
     elif mode == '{}>rules'.format(game) and little_fuctions.isequal(input, 'Другой вариант игры'):
@@ -52,12 +55,14 @@ def return_start():
     buttons = ['Начать', 'Играть с разработчиком', 'Правила', 'В начало']
     return text, speech, buttons
 
+
 def return_rules():
     text='Я буду описывать действия, а каждый из вас должен честно отвечать, делал он его или нет. ' \
          'Эта игра позволяет узнать друг о друге много нового и интересного.'
     speech=text
     buttons=['Начать', 'Играть с разработчиком', 'Другой вариант игры', 'В начало']
     return text, speech, buttons
+
 
 def return_another_rules():
     text = 'Заранее нужно приготовить фишки, это могут быть спички, монеты, крупная фасоль и так далее. ' \
@@ -72,6 +77,7 @@ def return_another_rules():
     speech = text
     buttons = ['Варианты действий', 'Другой вариант игры', 'В начало']
     return text, speech, buttons
+
 
 def return_riddle(fl, id, database):
     import I_have_never_ever_biblio
@@ -90,6 +96,5 @@ def return_riddle(fl, id, database):
     text='{}{}'.format('Я никогда не ' + choice,
                        '\n\n{}'.format(random.choice(['Я делал это', 'Я не делал это']))*fl)
     speech=text
-
     buttons = ['Дальше', 'В начало']
     return text, speech, buttons

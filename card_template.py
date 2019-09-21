@@ -128,7 +128,6 @@ rate = ['965417/375c0b817fb28131c870',
         '965417/b74c4b4c20c1f192da2f']
 
 
-
 def start_card(color):
     color = (color + default_color) % colors
     import random
@@ -183,6 +182,7 @@ def start_card(color):
             ],
     }
 
+
 def inever_card(color):
     import little_fuctions
     color = (color + default_color) % colors
@@ -227,6 +227,7 @@ def inever_card(color):
             ],
     }
 
+
 def croco_card(color):
     import little_fuctions
     color = (color + default_color) % colors
@@ -262,6 +263,7 @@ def croco_card(color):
                 }
             ],
     }
+
 
 def yesno_card(color, user_id, database):
     import little_fuctions
@@ -319,6 +321,7 @@ def yesno_card(color, user_id, database):
             ],
     }
 
+
 def croco_diff_card(color):
     color = (color + default_color) % colors
     return {
@@ -370,6 +373,7 @@ def croco_diff_card(color):
             ],
     }
 
+
 def settings(color, used_id, database):
     import little_fuctions
     color = (color + default_color) % colors
@@ -391,7 +395,9 @@ def settings(color, used_id, database):
                 {
                     "image_id": deaf[color] if silent_on else hear[color],
                     "title": 'Тихий режим' + ('[ON]' if silent_on else '[OFF]'),
-                    "description": 'Сейчас я не слушаю вас 2 минуты после своей фразы' if silent_on else 'Сейчас я слушаю вас сразу после своей фразы.',
+                    "description":
+                        'Сейчас я не слушаю вас 2 минуты после своей фразы' if silent_on
+                        else 'Сейчас я слушаю вас сразу после своей фразы.',
                     "button": {
                         "payload": {"name": "Тихий режим"}
                     }
