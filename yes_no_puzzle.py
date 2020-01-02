@@ -32,8 +32,8 @@ def start(input, id, database):
             little_fuctions.update_last_riddle(number - 2, id, database)
         elif little_fuctions.isequal(input, 'Дальше'):
             num = min(number + 1, len(yes_no_puzzle_biblio.riddles))
-            text, speech, buttons = return_riddle(number + 1)
-            mode = '{}>riddle>{}'.format(game, num - 1)
+            text, speech, buttons = return_riddle(num)
+            mode = '{}>riddle>{}'.format(game, num)
             little_fuctions.update_last_riddle(num, id, database)
         elif little_fuctions.isequal(input.split()[0], 'Пропустить'):
             if input.split()[1].isdigit():
