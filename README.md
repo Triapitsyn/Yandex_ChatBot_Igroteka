@@ -4,3 +4,6 @@ Description: ChatBot provides a collection of 3 most popular games and can eithe
 Result: 1st place among 300 projects  https://yandex.ru/blog/dialogs/premiya-alisy-luchshie-navyki-za-avgust
 
 Project page: https://dialogs.yandex.ru/store/skills/96b7421d-igroteka-uyut-i-vesel-e-dlya-druz
+
+!(starting page)
+[https://i.paste.pics/9QOU9.png]
