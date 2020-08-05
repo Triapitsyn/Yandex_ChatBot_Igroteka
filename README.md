@@ -5,5 +5,4 @@ Result: 1st place among 300 projects  https://yandex.ru/blog/dialogs/premiya-ali
 
 Project page: https://dialogs.yandex.ru/store/skills/96b7421d-igroteka-uyut-i-vesel-e-dlya-druz
 
-!(starting page)
-[https://i.paste.pics/9QOU9.png]
+<img src="https://raw.githubusercontent.com/Tryapitsyn/Yandex_ChatBot_Igroteka/master/data/GVfl7G19INQ.jpg" width="30%"></img> <img src="https://raw.githubusercontent.com/Tryapitsyn/Yandex_ChatBot_Igroteka/master/data/sZMHRtZujkc.jpg" width="30%"></img> <img src="https://raw.githubusercontent.com/Tryapitsyn/Yandex_ChatBot_Igroteka/master/data/SAh0oA28kMU.jpg" width="30%"></img> 
